@@ -21,3 +21,6 @@ be starting from where I left off but this time, with all these features.
 flask
 react
 python
+
+# JIIRA PROJECT BOARD LINK
+https://pokedex-tu.atlassian.net/jira/software/projects/PT/boards/3
