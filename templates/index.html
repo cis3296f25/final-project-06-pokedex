@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Mini Pokédex</title>
+	<!-- This is the stylesheet for the page that is being triggered by the Flask app -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+	<main class="container">
+		<h1>Pokémon Lookup</h1>
+		<form id="search-form">
+			<input id="name-input" type="text" placeholder="Enter Pokémon name (e.g., pikachu)"/>
+			<button type="submit">Search</button>
+		</form>
+
+		<!-- Hidden section for the result of the search, or error, both hidden by default -->
+		<section id="result" class="hidden"></section>
+		<p id="error" class="error hidden"></p>
+	</main>
+
+	<script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
+
+
