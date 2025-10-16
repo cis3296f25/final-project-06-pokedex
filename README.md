@@ -1,28 +1,26 @@
-# Project Name
-Put here a short paragraph describing your project. 
-Adding an screenshot or a mockup of your application in action would be nice.  
+## POKEDEX
 
-![This is a screenshot.](images.png)
-# How to run
-Provide here instructions on how to use your application.   
-- Download the latest binary from the Release section on the right on GitHub.  
-- On the command line uncompress using
-```
-tar -xzf  
-```
-- On the command line run with
-```
-./hello
-```
-- You will see Hello World! on your terminal. 
+# PROJECT ABSTRACT
 
-# How to contribute
-Follow this project board to know the latest status of the project: [http://...]([http://...])  
 
-### How to build
-- Use this github repository: ... 
-- Specify what branch to use for a more stable release or for cutting edge development.  
-- Use InteliJ 11
-- Specify additional library to download if needed 
-- What file and target to compile and run. 
-- What is expected to happen when the app start. 
+We all know what Pokemon is, and most of us might know what a Pokédex is. It is an
+encyclopedia focused on providing information on the world of Pokémon, from creatures’
+biology to their base stats used in battle. In this project, I would like to replicate the Pokédex that
+we see in the anime and games of Pokémon. This project will combine Artificial intelligence; 3D
+modeling, NLQ service and cloud service to deliver a fleshed-out and interactive Pokédex
+experience. This app also focuses on a hub area where users can create teams, share them and
+record their personal “box” of Pokémon. Users can also scan different Pokémon like using their
+photograph or even scan a certain TCG card to retrieve info on them. I want to put it on IOS and
+Android to enhance that experience of opening up your own Pokédex. This project will expose
+me to Machine learning, AR, cloud computing and game data to create an immersive Pokédex
+experience. I once created a small project called Pokedex using Python, and in this project, I will
+be starting from where I left off but this time, with all these features.
+
+# TOOLS 
+
+flask
+react
+python
+
+# JIIRA PROJECT BOARD LINK
+https://pokedex-tu.atlassian.net/jira/software/projects/PT/boards/3

@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+
+body {
+	margin: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+form { display: flex; gap: 8px; margin: 16px 0; }
+
+input[type="text"] { flex: 1; padding: 8px; }
+
+button { padding: 8px 12px; }
+
+.hidden { display: none; }
+
+.error { color: red; }
+
+.card { border: 1px solid #ccc; padding: 12px; }
+
+
