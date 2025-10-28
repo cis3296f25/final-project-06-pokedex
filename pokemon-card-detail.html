@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Pokemon Card Detail - Prototype</title>
+	<style>
+		* { box-sizing: border-box; }
+
+		body {
+			margin: 0;
+			padding: 20px;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.container {
+			max-width: 500px;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		/* Back button */
+		.back-button {
+			display: inline-block;
+			padding: 12px 24px;
+			background: white;
+			color: #667eea;
+			text-decoration: none;
+			border-radius: 25px;
+			font-weight: bold;
+			margin-bottom: 30px;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+
+		.back-button:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+		}
+
+		/* POKEMON TCG CARD STYLING - customize this! */
+		.pokemon-card {
+			width: 100%;
+			max-width: 400px;
+			min-height: 560px;
+			background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+			border-radius: 20px;
+			border: 8px solid #d96b28;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.3), 
+			            0 0 0 2px #000,
+			            inset 0 2px 0 rgba(255,255,255,0.5);
+			padding: 20px;
+			position: relative;
+			transition: transform 0.3s ease;
+			margin: 0 auto;
+		}
+
+		.pokemon-card:hover {
+			transform: translateY(-10px) scale(1.02);
+		}
+
+		/* Card header with name and HP */
+		.card-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 12px;
+		}
+
+		.pokemon-name {
+			font-size: 28px;
+			font-weight: bold;
+			text-transform: capitalize;
+			color: #000;
+			margin: 0;
+		}
+
+		.pokemon-hp {
+			font-size: 24px;
+			font-weight: bold;
+			color: #e74c3c;
+			text-align: right;
+		}
+
+		.pokemon-hp span {
+			font-size: 16px;
+			color: #7f8c8d;
+		}
+
+		/* Card image section */
+		.card-image-container {
+			width: 100%;
+			height: 280px;
+			background: radial-gradient(circle, #fff 0%, #e8e8e8 100%);
+			border: 4px solid #000;
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 15px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.card-image-container img {
+			max-width: 90%;
+			max-height: 90%;
+			object-fit: contain;
+			filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+		}
+
+		.pokemon-id-badge {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: rgba(0,0,0,0.7);
+			color: #ffd700;
+			padding: 5px 12px;
+			border-radius: 20px;
+			font-weight: bold;
+			font-size: 14px;
+		}
+
+		/* Type section */
+		.type-section {
+			margin-bottom: 12px;
+		}
+
+		.type-label {
+			font-size: 11px;
+			text-transform: uppercase;
+			color: #7f8c8d;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		.types {
+			display: flex;
+			gap: 8px;
+			flex-wrap: wrap;
+		}
+
+		.type-badge {
+			padding: 8px 16px;
+			border-radius: 6px;
+			font-size: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: white;
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+			border: 2px solid rgba(0,0,0,0.2);
+		}
+
+		/* Type colors */
+		.type-fire { background: linear-gradient(135deg, #f08030 0%, #d96b28 100%); }
+		.type-water { background: linear-gradient(135deg, #6890f0 0%, #5078d0 100%); }
+		.type-grass { background: linear-gradient(135deg, #78c850 0%, #60a838 100%); }
+		.type-electric { background: linear-gradient(135deg, #f8d030 0%, #d8b018 100%); color: #333; }
+		.type-psychic { background: linear-gradient(135deg, #f85888 0%, #d84070 100%); }
+		.type-normal { background: linear-gradient(135deg, #a8a878 0%, #908860 100%); }
+		.type-fighting { background: linear-gradient(135deg, #c03028 0%, #a02020 100%); }
+		.type-flying { background: linear-gradient(135deg, #a890f0 0%, #9078d0 100%); }
+		.type-poison { background: linear-gradient(135deg, #a040a0 0%, #803080 100%); }
+		.type-ground { background: linear-gradient(135deg, #e0c068 0%, #c8a850 100%); }
+		.type-rock { background: linear-gradient(135deg, #b8a038 0%, #a09028 100%); }
+		.type-bug { background: linear-gradient(135deg, #a8b820 0%, #90a010 100%); }
+		.type-ghost { background: linear-gradient(135deg, #705898 0%, #584080 100%); }
+		.type-steel { background: linear-gradient(135deg, #b8b8d0 0%, #9898b0 100%); }
+		.type-dragon { background: linear-gradient(135deg, #7038f8 0%, #5828d8 100%); }
+		.type-dark { background: linear-gradient(135deg, #705848 0%, #584030 100%); }
+		.type-fairy { background: linear-gradient(135deg, #ee99ac 0%, #d67994 100%); }
+		.type-ice { background: linear-gradient(135deg, #98d8d8 0%, #78c0c0 100%); }
+
+		/* Abilities section */
+		.abilities-section {
+			background: #fff;
+			border: 3px solid #000;
+			border-radius: 8px;
+			padding: 12px;
+			margin-bottom: 12px;
+		}
+
+		.abilities-section h3 {
+			margin: 0 0 8px 0;
+			font-size: 12px;
+			text-transform: uppercase;
+			color: #7f8c8d;
+			font-weight: bold;
+		}
+
+		.ability-list {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+		}
+
+		.ability-item {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.ability-icon {
+			width: 20px;
+			height: 20px;
+			background: #3498db;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 12px;
+			font-weight: bold;
+			flex-shrink: 0;
+		}
+
+		.ability-name {
+			font-size: 14px;
+			font-weight: 600;
+			text-transform: capitalize;
+			color: #000;
+		}
+
+		.ability-hidden {
+			font-size: 11px;
+			color: #e74c3c;
+			background: #ffe6e6;
+			padding: 2px 8px;
+			border-radius: 10px;
+			margin-left: auto;
+		}
+
+		/* Card footer */
+		.card-footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 10px;
+			color: #7f8c8d;
+			margin-top: auto;
+		}
+
+		.rarity {
+			font-weight: bold;
+			color: #f39c12;
+		}
+
+		/* Info section below card */
+		.dev-info {
+			background: rgba(255,255,255,0.95);
+			border-radius: 12px;
+			padding: 20px;
+			margin-top: 30px;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+			text-align: center;
+		}
+
+		.dev-info h3 {
+			margin-top: 0;
+			color: #667eea;
+		}
+
+		.dev-info p {
+			margin: 10px 0;
+			color: #333;
+			font-size: 14px;
+		}
+
+		.dev-info code {
+			background: #f0f0f0;
+			padding: 4px 8px;
+			border-radius: 4px;
+			font-family: 'Courier New', monospace;
+			color: #e74c3c;
+			font-size: 13px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<a href="#" class="back-button">← Back to List</a>
+		
+		<!-- SINGLE POKEMON CARD - This is what displays when user clicks -->
+		<div class="pokemon-card">
+			<!-- Card Header -->
+			<div class="card-header">
+				<h2 class="pokemon-name">Charizard</h2>
+				<div class="pokemon-hp">120 <span>HP</span></div>
+			</div>
+
+			<!-- Pokemon Image -->
+			<div class="card-image-container">
+				<div class="pokemon-id-badge">#006</div>
+				<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charizard">
+			</div>
+
+			<!-- Type Section -->
+			<div class="type-section">
+				<div class="type-label">Type</div>
+				<div class="types">
+					<span class="type-badge type-fire">Fire</span>
+					<span class="type-badge type-flying">Flying</span>
+				</div>
+			</div>
+
+			<!-- Abilities Section -->
+			<div class="abilities-section">
+				<h3>Abilities</h3>
+				<div class="ability-list">
+					<div class="ability-item">
+						<div class="ability-icon">⚡</div>
+						<span class="ability-name">Blaze</span>
+					</div>
+					<div class="ability-item">
+						<div class="ability-icon">🔆</div>
+						<span class="ability-name">Solar Power</span>
+						<span class="ability-hidden">Hidden</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Card Footer -->
+			<div class="card-footer">
+				<span>© Pokémon</span>
+				<span class="rarity">★ Rare</span>
+			</div>
+		</div>
+
+		<!-- Instructions for development -->
+		<div class="dev-info">
+			<p>When user clicks a Pokemon, redirect to:</p>
+			<p><code>/pokemon/&lt;name&gt;</code> or <code>/pokemon/&lt;id&gt;</code></p>
+			<p style="font-size: 12px; margin-top: 15px;">This page will fetch Pokemon data from the API and populate the card above.</p>
+		</div>
+	</div>
+
+	<script>
+		
+		async function loadPokemon(nameOrId) {
+			try {
+				const response = await fetch(`/api/pokemon/${nameOrId}`);
+				const data = await response.json();
+				
+				// Update card with real data
+				document.querySelector('.pokemon-name').textContent = data.name;
+				document.querySelector('.pokemon-id-badge').textContent = `#${String(data.id).padStart(3, '0')}`;
+				document.querySelector('.pokemon-hp').innerHTML = `${data.id * 10} <span>HP</span>`;
+				
+				// Update image
+				const img = document.querySelector('.card-image-container img');
+				img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`;
+				img.alt = data.name;
+				
+				// Update types
+				const typesContainer = document.querySelector('.types');
+				typesContainer.innerHTML = data.types.map(type => 
+					`<span class="type-badge type-${type}">${type}</span>`
+				).join('');
+				
+				// Update abilities
+				const abilitiesContainer = document.querySelector('.ability-list');
+				abilitiesContainer.innerHTML = data.abilities.map(ability => `
+					<div class="ability-item">
+						<div class="ability-icon">⚡</div>
+						<span class="ability-name">${ability.name}</span>
+						${ability.is_hidden ? '<span class="ability-hidden">Hidden</span>' : ''}
+					</div>
+				`).join('');
+				
+			} catch (error) {
+				console.error('Error loading Pokemon:', error);
+				alert('Pokemon not found!');
+			}
+		}
+
+		// Back button functionality
+		document.querySelector('.back-button').addEventListener('click', (e) => {
+			e.preventDefault();
+			window.history.back();
+			// Or use: window.location.href = '/';
+		});
+
+		// Load Pokemon from URL parameter
+		// const urlParams = new URLSearchParams(window.location.search);
+		// const pokemonName = urlParams.get('name');
+		// if (pokemonName) loadPokemon(pokemonName);
+	</script>
+</body>
+</html>
