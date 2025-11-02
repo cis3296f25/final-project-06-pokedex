@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Generation 1 Pokémon</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>
+	<main class="container">
+		<nav class="nav-links">
+			<a href="/" class="nav-link">Back to Search</a>
+		</nav>
+		<h1>Generation 1 Pokémon</h1>
+		<p class="subtitle">All 151 Original Pokémon</p>
+		<div class="pokemon-list">
+			{% for pokemon in pokemon_list %}
+			<div class="pokemon-card" data-pokemon-id="{{ pokemon.id }}" data-main-type="{{ pokemon.types[0].lower() }}">
+					<div class="card-header">
+					<h3 class="pokemon-name">{{ pokemon.name }}</h3>
+					<div class="pokemon-hp">
+						{% set hp_stat = pokemon.stats | selectattr("stat.name", "equalto", "hp") | list %}
+						{% if hp_stat %}
+							{{ hp_stat[0].base_stat }}
+						{% else %}
+							{{ pokemon.id * 10 }}
+						{% endif %}
+						<span>HP</span>
+					</div>
+				</div>
+
+
+				<div class="card-image-container">
+					<div class="pokemon-id-badge">#{{ '%03d'|format(pokemon.id) }}</div>
+					{% if pokemon.images.official_artwork %}
+					<img src="{{ pokemon.images.official_artwork }}" alt="{{ pokemon.name }}" loading="lazy">
+					{% elif pokemon.images.front_default %}
+					<img src="{{ pokemon.images.front_default }}" alt="{{ pokemon.name }}" loading="lazy">
+					{% else %}
+					<div class="no-image">No Image</div>
+					{% endif %}
+				</div>
+
+				<div class="type-section">
+					<div class="type-label">Type</div>
+					<div class="pokemon-types">
+						{% for type in pokemon.types %}
+						<span class="type {{ type|lower }}">{{ type.title() }}</span>
+						{% endfor %}
+					</div>
+				</div>
+
+				<div class="abilities-section">
+					<h4>Abilities</h4>
+					<div class="ability-list">
+						{% for ability in pokemon.abilities %}
+						<div class="ability-item">
+							<div class="ability-icon">⚡</div>
+							<span class="ability-name">{{ ability.name }}</span>
+							{% if ability.is_hidden %}
+							<span class="ability-hidden">Hidden</span>
+							{% endif %}
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+
+				<div class="card-footer">
+					<span>© Pokémon</span>
+					<span class="rarity">★ Rare</span>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</main>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Define border colors for each Pokémon type
+			const typeBorderColors = {
+				normal: '#A8A878',
+				fire: '#F08030',
+				water: '#6890F0',
+				electric: '#F8D030',
+				grass: '#78C850',
+				ice: '#98D8D8',
+				fighting: '#C03028',
+				poison: '#A040A0',
+				ground: '#E0C068',
+				flying: '#A890F0',
+				psychic: '#F85888',
+				bug: '#A8B820',
+				rock: '#B8A038',
+				ghost: '#705898',
+				dragon: '#7038F8',
+				dark: '#705848',
+				steel: '#B8B8D0',
+				fairy: '#EE99AC'
+			};
+
+			// Apply border colors based on Pokémon type
+			const pokemonCards = document.querySelectorAll('.pokemon-card');
+			pokemonCards.forEach(card => {
+				const mainType = card.getAttribute('data-main-type');
+				const borderColor = typeBorderColors[mainType] || '#ffd700'; // Fallback to gold if type not found
+				card.style.borderColor = borderColor;
+			});
+		});
+	</script>
+</body>
+
+</html>
