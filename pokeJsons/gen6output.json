@@ -1,0 +1,2082 @@
+[
+    {
+        "id": 650,
+        "name": "Chespin",
+        "abilities": [
+            {
+                "name": "overgrow",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "bulletproof",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "grass"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/650.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/650.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/650.png"
+        },
+        "height": 4,
+        "weight": 90,
+        "base_experience": 63
+    },
+    {
+        "id": 651,
+        "name": "Quilladin",
+        "abilities": [
+            {
+                "name": "overgrow",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "bulletproof",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "grass"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/651.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/651.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/651.png"
+        },
+        "height": 7,
+        "weight": 290,
+        "base_experience": 142
+    },
+    {
+        "id": 652,
+        "name": "Chesnaught",
+        "abilities": [
+            {
+                "name": "overgrow",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "bulletproof",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "grass",
+            "fighting"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/652.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/652.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/652.png"
+        },
+        "height": 16,
+        "weight": 900,
+        "base_experience": 239
+    },
+    {
+        "id": 653,
+        "name": "Fennekin",
+        "abilities": [
+            {
+                "name": "blaze",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "magician",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fire"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/653.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/653.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/653.png"
+        },
+        "height": 4,
+        "weight": 94,
+        "base_experience": 61
+    },
+    {
+        "id": 654,
+        "name": "Braixen",
+        "abilities": [
+            {
+                "name": "blaze",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "magician",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fire"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/654.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/654.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/654.png"
+        },
+        "height": 10,
+        "weight": 145,
+        "base_experience": 143
+    },
+    {
+        "id": 655,
+        "name": "Delphox",
+        "abilities": [
+            {
+                "name": "blaze",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "magician",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fire",
+            "psychic"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/655.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/655.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/655.png"
+        },
+        "height": 15,
+        "weight": 390,
+        "base_experience": 240
+    },
+    {
+        "id": 656,
+        "name": "Froakie",
+        "abilities": [
+            {
+                "name": "torrent",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "protean",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "water"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/656.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/656.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/656.png"
+        },
+        "height": 3,
+        "weight": 70,
+        "base_experience": 63
+    },
+    {
+        "id": 657,
+        "name": "Frogadier",
+        "abilities": [
+            {
+                "name": "torrent",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "protean",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "water"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/657.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/657.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/657.png"
+        },
+        "height": 6,
+        "weight": 109,
+        "base_experience": 142
+    },
+    {
+        "id": 658,
+        "name": "Greninja",
+        "abilities": [
+            {
+                "name": "torrent",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "protean",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "water",
+            "dark"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/658.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/658.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/658.png"
+        },
+        "height": 15,
+        "weight": 400,
+        "base_experience": 239
+    },
+    {
+        "id": 659,
+        "name": "Bunnelby",
+        "abilities": [
+            {
+                "name": "pickup",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "cheek-pouch",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "huge-power",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "normal"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/659.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/659.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/659.png"
+        },
+        "height": 4,
+        "weight": 50,
+        "base_experience": 47
+    },
+    {
+        "id": 660,
+        "name": "Diggersby",
+        "abilities": [
+            {
+                "name": "pickup",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "cheek-pouch",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "huge-power",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "normal",
+            "ground"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/660.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/660.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/660.png"
+        },
+        "height": 10,
+        "weight": 424,
+        "base_experience": 148
+    },
+    {
+        "id": 661,
+        "name": "Fletchling",
+        "abilities": [
+            {
+                "name": "big-pecks",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "gale-wings",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "normal",
+            "flying"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/661.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/661.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/661.png"
+        },
+        "height": 3,
+        "weight": 17,
+        "base_experience": 56
+    },
+    {
+        "id": 662,
+        "name": "Fletchinder",
+        "abilities": [
+            {
+                "name": "flame-body",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "gale-wings",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fire",
+            "flying"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/662.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/662.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/662.png"
+        },
+        "height": 7,
+        "weight": 160,
+        "base_experience": 134
+    },
+    {
+        "id": 663,
+        "name": "Talonflame",
+        "abilities": [
+            {
+                "name": "flame-body",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "gale-wings",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fire",
+            "flying"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/663.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/663.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/663.png"
+        },
+        "height": 12,
+        "weight": 245,
+        "base_experience": 175
+    },
+    {
+        "id": 664,
+        "name": "Scatterbug",
+        "abilities": [
+            {
+                "name": "shield-dust",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "compound-eyes",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "friend-guard",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "bug"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/664.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/664.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/664.png"
+        },
+        "height": 3,
+        "weight": 25,
+        "base_experience": 40
+    },
+    {
+        "id": 665,
+        "name": "Spewpa",
+        "abilities": [
+            {
+                "name": "shed-skin",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "friend-guard",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "bug"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/665.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/665.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/665.png"
+        },
+        "height": 3,
+        "weight": 84,
+        "base_experience": 75
+    },
+    {
+        "id": 666,
+        "name": "Vivillon",
+        "abilities": [
+            {
+                "name": "shield-dust",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "compound-eyes",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "friend-guard",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "bug",
+            "flying"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/666.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/666.png"
+        },
+        "height": 12,
+        "weight": 170,
+        "base_experience": 185
+    },
+    {
+        "id": 667,
+        "name": "Litleo",
+        "abilities": [
+            {
+                "name": "rivalry",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "unnerve",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "moxie",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fire",
+            "normal"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/667.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/667.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/667.png"
+        },
+        "height": 6,
+        "weight": 135,
+        "base_experience": 74
+    },
+    {
+        "id": 668,
+        "name": "Pyroar",
+        "abilities": [
+            {
+                "name": "rivalry",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "unnerve",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "moxie",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fire",
+            "normal"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/668.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/668.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/668.png"
+        },
+        "height": 15,
+        "weight": 815,
+        "base_experience": 177
+    },
+    {
+        "id": 669,
+        "name": "Flabebe",
+        "abilities": [
+            {
+                "name": "flower-veil",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "symbiosis",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/669.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/669.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/669.png"
+        },
+        "height": 1,
+        "weight": 1,
+        "base_experience": 61
+    },
+    {
+        "id": 670,
+        "name": "Floette",
+        "abilities": [
+            {
+                "name": "flower-veil",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "symbiosis",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/670.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/670.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/670.png"
+        },
+        "height": 2,
+        "weight": 9,
+        "base_experience": 130
+    },
+    {
+        "id": 671,
+        "name": "Florges",
+        "abilities": [
+            {
+                "name": "flower-veil",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "symbiosis",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/671.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/671.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/671.png"
+        },
+        "height": 11,
+        "weight": 100,
+        "base_experience": 248
+    },
+    {
+        "id": 672,
+        "name": "Skiddo",
+        "abilities": [
+            {
+                "name": "sap-sipper",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "grass-pelt",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "grass"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/672.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/672.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/672.png"
+        },
+        "height": 9,
+        "weight": 310,
+        "base_experience": 70
+    },
+    {
+        "id": 673,
+        "name": "Gogoat",
+        "abilities": [
+            {
+                "name": "sap-sipper",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "grass-pelt",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "grass"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/673.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/673.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/673.png"
+        },
+        "height": 17,
+        "weight": 910,
+        "base_experience": 186
+    },
+    {
+        "id": 674,
+        "name": "Pancham",
+        "abilities": [
+            {
+                "name": "iron-fist",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "mold-breaker",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "scrappy",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fighting"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/674.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/674.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/674.png"
+        },
+        "height": 6,
+        "weight": 80,
+        "base_experience": 70
+    },
+    {
+        "id": 675,
+        "name": "Pangoro",
+        "abilities": [
+            {
+                "name": "iron-fist",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "mold-breaker",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "scrappy",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fighting",
+            "dark"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/675.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/675.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/675.png"
+        },
+        "height": 21,
+        "weight": 1360,
+        "base_experience": 173
+    },
+    {
+        "id": 676,
+        "name": "Furfrou",
+        "abilities": [
+            {
+                "name": "fur-coat",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "normal"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/676.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/676.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/676.png"
+        },
+        "height": 12,
+        "weight": 280,
+        "base_experience": 165
+    },
+    {
+        "id": 677,
+        "name": "Espurr",
+        "abilities": [
+            {
+                "name": "keen-eye",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "infiltrator",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "own-tempo",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "psychic"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/677.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/677.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/677.png"
+        },
+        "height": 3,
+        "weight": 35,
+        "base_experience": 71
+    },
+    {
+        "id": 678,
+        "name": "Meowstic-male",
+        "abilities": [
+            {
+                "name": "keen-eye",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "infiltrator",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "prankster",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "psychic"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/678.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/678.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/678.png"
+        },
+        "height": 6,
+        "weight": 85,
+        "base_experience": 163
+    },
+    {
+        "id": 679,
+        "name": "Honedge",
+        "abilities": [
+            {
+                "name": "no-guard",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "steel",
+            "ghost"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/679.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/679.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/679.png"
+        },
+        "height": 8,
+        "weight": 20,
+        "base_experience": 65
+    },
+    {
+        "id": 680,
+        "name": "Doublade",
+        "abilities": [
+            {
+                "name": "no-guard",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "steel",
+            "ghost"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/680.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/680.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/680.png"
+        },
+        "height": 8,
+        "weight": 45,
+        "base_experience": 157
+    },
+    {
+        "id": 681,
+        "name": "Aegislash-shield",
+        "abilities": [
+            {
+                "name": "stance-change",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "steel",
+            "ghost"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/681.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/681.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/681.png"
+        },
+        "height": 17,
+        "weight": 530,
+        "base_experience": 234
+    },
+    {
+        "id": 682,
+        "name": "Spritzee",
+        "abilities": [
+            {
+                "name": "healer",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "aroma-veil",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/682.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/682.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/682.png"
+        },
+        "height": 2,
+        "weight": 5,
+        "base_experience": 68
+    },
+    {
+        "id": 683,
+        "name": "Aromatisse",
+        "abilities": [
+            {
+                "name": "healer",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "aroma-veil",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/683.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/683.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/683.png"
+        },
+        "height": 8,
+        "weight": 155,
+        "base_experience": 162
+    },
+    {
+        "id": 684,
+        "name": "Swirlix",
+        "abilities": [
+            {
+                "name": "sweet-veil",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "unburden",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/684.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/684.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/684.png"
+        },
+        "height": 4,
+        "weight": 35,
+        "base_experience": 68
+    },
+    {
+        "id": 685,
+        "name": "Slurpuff",
+        "abilities": [
+            {
+                "name": "sweet-veil",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "unburden",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/685.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/685.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/685.png"
+        },
+        "height": 8,
+        "weight": 50,
+        "base_experience": 168
+    },
+    {
+        "id": 686,
+        "name": "Inkay",
+        "abilities": [
+            {
+                "name": "contrary",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "suction-cups",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "infiltrator",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "dark",
+            "psychic"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/686.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/686.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/686.png"
+        },
+        "height": 4,
+        "weight": 35,
+        "base_experience": 58
+    },
+    {
+        "id": 687,
+        "name": "Malamar",
+        "abilities": [
+            {
+                "name": "contrary",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "suction-cups",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "infiltrator",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "dark",
+            "psychic"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/687.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/687.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/687.png"
+        },
+        "height": 15,
+        "weight": 470,
+        "base_experience": 169
+    },
+    {
+        "id": 688,
+        "name": "Binacle",
+        "abilities": [
+            {
+                "name": "tough-claws",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "sniper",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "pickpocket",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "rock",
+            "water"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/688.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/688.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/688.png"
+        },
+        "height": 5,
+        "weight": 310,
+        "base_experience": 61
+    },
+    {
+        "id": 689,
+        "name": "Barbaracle",
+        "abilities": [
+            {
+                "name": "tough-claws",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "sniper",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "pickpocket",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "rock",
+            "water"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/689.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/689.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/689.png"
+        },
+        "height": 13,
+        "weight": 960,
+        "base_experience": 175
+    },
+    {
+        "id": 690,
+        "name": "Skrelp",
+        "abilities": [
+            {
+                "name": "poison-point",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "poison-touch",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "adaptability",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "poison",
+            "water"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/690.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/690.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/690.png"
+        },
+        "height": 5,
+        "weight": 73,
+        "base_experience": 64
+    },
+    {
+        "id": 691,
+        "name": "Dragalge",
+        "abilities": [
+            {
+                "name": "poison-point",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "poison-touch",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "adaptability",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "poison",
+            "dragon"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/691.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/691.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/691.png"
+        },
+        "height": 18,
+        "weight": 815,
+        "base_experience": 173
+    },
+    {
+        "id": 692,
+        "name": "Clauncher",
+        "abilities": [
+            {
+                "name": "mega-launcher",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "water"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/692.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/692.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/692.png"
+        },
+        "height": 5,
+        "weight": 83,
+        "base_experience": 66
+    },
+    {
+        "id": 693,
+        "name": "Clawitzer",
+        "abilities": [
+            {
+                "name": "mega-launcher",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "water"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/693.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/693.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/693.png"
+        },
+        "height": 13,
+        "weight": 353,
+        "base_experience": 100
+    },
+    {
+        "id": 694,
+        "name": "Helioptile",
+        "abilities": [
+            {
+                "name": "dry-skin",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "sand-veil",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "solar-power",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "electric",
+            "normal"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/694.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/694.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/694.png"
+        },
+        "height": 5,
+        "weight": 60,
+        "base_experience": 58
+    },
+    {
+        "id": 695,
+        "name": "Heliolisk",
+        "abilities": [
+            {
+                "name": "dry-skin",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "sand-veil",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "solar-power",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "electric",
+            "normal"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/695.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/695.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/695.png"
+        },
+        "height": 10,
+        "weight": 210,
+        "base_experience": 168
+    },
+    {
+        "id": 696,
+        "name": "Tyrunt",
+        "abilities": [
+            {
+                "name": "strong-jaw",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "sturdy",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "rock",
+            "dragon"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/696.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/696.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/696.png"
+        },
+        "height": 8,
+        "weight": 260,
+        "base_experience": 72
+    },
+    {
+        "id": 697,
+        "name": "Tyrantrum",
+        "abilities": [
+            {
+                "name": "strong-jaw",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "rock-head",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "rock",
+            "dragon"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/697.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/697.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/697.png"
+        },
+        "height": 25,
+        "weight": 2700,
+        "base_experience": 182
+    },
+    {
+        "id": 698,
+        "name": "Amaura",
+        "abilities": [
+            {
+                "name": "refrigerate",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "snow-warning",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "rock",
+            "ice"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/698.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/698.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/698.png"
+        },
+        "height": 13,
+        "weight": 252,
+        "base_experience": 72
+    },
+    {
+        "id": 699,
+        "name": "Aurorus",
+        "abilities": [
+            {
+                "name": "refrigerate",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "snow-warning",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "rock",
+            "ice"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/699.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/699.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/699.png"
+        },
+        "height": 27,
+        "weight": 2250,
+        "base_experience": 104
+    },
+    {
+        "id": 700,
+        "name": "Sylveon",
+        "abilities": [
+            {
+                "name": "cute-charm",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "pixilate",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/700.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/700.png"
+        },
+        "height": 10,
+        "weight": 235,
+        "base_experience": 184
+    },
+    {
+        "id": 701,
+        "name": "Hawlucha",
+        "abilities": [
+            {
+                "name": "limber",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "unburden",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "mold-breaker",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "fighting",
+            "flying"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/701.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/701.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/701.png"
+        },
+        "height": 8,
+        "weight": 215,
+        "base_experience": 175
+    },
+    {
+        "id": 702,
+        "name": "Dedenne",
+        "abilities": [
+            {
+                "name": "cheek-pouch",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "pickup",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "plus",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "electric",
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/702.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/702.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/702.png"
+        },
+        "height": 2,
+        "weight": 22,
+        "base_experience": 151
+    },
+    {
+        "id": 703,
+        "name": "Carbink",
+        "abilities": [
+            {
+                "name": "clear-body",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "sturdy",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "rock",
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/703.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/703.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/703.png"
+        },
+        "height": 3,
+        "weight": 57,
+        "base_experience": 100
+    },
+    {
+        "id": 704,
+        "name": "Goomy",
+        "abilities": [
+            {
+                "name": "sap-sipper",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "hydration",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "gooey",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "dragon"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/704.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/704.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/704.png"
+        },
+        "height": 3,
+        "weight": 28,
+        "base_experience": 60
+    },
+    {
+        "id": 705,
+        "name": "Sliggoo",
+        "abilities": [
+            {
+                "name": "sap-sipper",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "hydration",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "gooey",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "dragon"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/705.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/705.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/705.png"
+        },
+        "height": 8,
+        "weight": 175,
+        "base_experience": 158
+    },
+    {
+        "id": 706,
+        "name": "Goodra",
+        "abilities": [
+            {
+                "name": "sap-sipper",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "hydration",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "gooey",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "dragon"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/706.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/706.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/706.png"
+        },
+        "height": 20,
+        "weight": 1505,
+        "base_experience": 270
+    },
+    {
+        "id": 707,
+        "name": "Klefki",
+        "abilities": [
+            {
+                "name": "prankster",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "magician",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "steel",
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/707.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/707.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/707.png"
+        },
+        "height": 2,
+        "weight": 30,
+        "base_experience": 165
+    },
+    {
+        "id": 708,
+        "name": "Phantump",
+        "abilities": [
+            {
+                "name": "natural-cure",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "frisk",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "harvest",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "ghost",
+            "grass"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/708.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/708.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/708.png"
+        },
+        "height": 4,
+        "weight": 70,
+        "base_experience": 62
+    },
+    {
+        "id": 709,
+        "name": "Trevenant",
+        "abilities": [
+            {
+                "name": "natural-cure",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "frisk",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "harvest",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "ghost",
+            "grass"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/709.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/709.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/709.png"
+        },
+        "height": 15,
+        "weight": 710,
+        "base_experience": 166
+    },
+    {
+        "id": 710,
+        "name": "Pumpkaboo-average",
+        "abilities": [
+            {
+                "name": "pickup",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "frisk",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "insomnia",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "ghost",
+            "grass"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/710.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/710.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/710.png"
+        },
+        "height": 4,
+        "weight": 50,
+        "base_experience": 67
+    },
+    {
+        "id": 711,
+        "name": "Gourgeist-average",
+        "abilities": [
+            {
+                "name": "pickup",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "frisk",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "insomnia",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "ghost",
+            "grass"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/711.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/711.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/711.png"
+        },
+        "height": 9,
+        "weight": 125,
+        "base_experience": 173
+    },
+    {
+        "id": 712,
+        "name": "Bergmite",
+        "abilities": [
+            {
+                "name": "own-tempo",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "ice-body",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "sturdy",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "ice"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/712.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/712.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/712.png"
+        },
+        "height": 10,
+        "weight": 995,
+        "base_experience": 61
+    },
+    {
+        "id": 713,
+        "name": "Avalugg",
+        "abilities": [
+            {
+                "name": "own-tempo",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "ice-body",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "sturdy",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "ice"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/713.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/713.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/713.png"
+        },
+        "height": 20,
+        "weight": 5050,
+        "base_experience": 180
+    },
+    {
+        "id": 714,
+        "name": "Noibat",
+        "abilities": [
+            {
+                "name": "frisk",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "infiltrator",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "telepathy",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "flying",
+            "dragon"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/714.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/714.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/714.png"
+        },
+        "height": 5,
+        "weight": 80,
+        "base_experience": 49
+    },
+    {
+        "id": 715,
+        "name": "Noivern",
+        "abilities": [
+            {
+                "name": "frisk",
+                "is_hidden": false,
+                "slot": 1
+            },
+            {
+                "name": "infiltrator",
+                "is_hidden": false,
+                "slot": 2
+            },
+            {
+                "name": "telepathy",
+                "is_hidden": true,
+                "slot": 3
+            }
+        ],
+        "types": [
+            "flying",
+            "dragon"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/715.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/715.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/715.png"
+        },
+        "height": 15,
+        "weight": 850,
+        "base_experience": 187
+    },
+    {
+        "id": 716,
+        "name": "Xerneas",
+        "abilities": [
+            {
+                "name": "fairy-aura",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/716.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/716.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/716.png"
+        },
+        "height": 30,
+        "weight": 2150,
+        "base_experience": 306
+    },
+    {
+        "id": 717,
+        "name": "Yveltal",
+        "abilities": [
+            {
+                "name": "dark-aura",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "dark",
+            "flying"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/717.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/717.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/717.png"
+        },
+        "height": 58,
+        "weight": 2030,
+        "base_experience": 306
+    },
+    {
+        "id": 718,
+        "name": "Zygarde-50",
+        "abilities": [
+            {
+                "name": "aura-break",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "dragon",
+            "ground"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/718.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/718.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/718.png"
+        },
+        "height": 50,
+        "weight": 3050,
+        "base_experience": 270
+    },
+    {
+        "id": 719,
+        "name": "Diancie",
+        "abilities": [
+            {
+                "name": "clear-body",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "rock",
+            "fairy"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/719.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/719.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/719.png"
+        },
+        "height": 7,
+        "weight": 88,
+        "base_experience": 270
+    },
+    {
+        "id": 720,
+        "name": "Hoopa",
+        "abilities": [
+            {
+                "name": "magician",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "psychic",
+            "ghost"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/720.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/720.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/720.png"
+        },
+        "height": 5,
+        "weight": 90,
+        "base_experience": 270
+    },
+    {
+        "id": 721,
+        "name": "Volcanion",
+        "abilities": [
+            {
+                "name": "water-absorb",
+                "is_hidden": false,
+                "slot": 1
+            }
+        ],
+        "types": [
+            "fire",
+            "water"
+        ],
+        "images": {
+            "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/721.png",
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/721.png",
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/721.png"
+        },
+        "height": 17,
+        "weight": 1950,
+        "base_experience": 270
+    }
+]

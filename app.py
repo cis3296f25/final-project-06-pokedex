@@ -1,162 +1,91 @@
-from flask import Flask, jsonify, render_template
-import requests
+from flask import Flask, render_template
+from routes.gen1 import get_gen1_pokemon_data
+from routes.index import get_pokemon
+from routes.gen2 import get_gen2_pokemon_data
+from routes.gen3 import get_gen3_pokemon_data
+from routes.gen4 import get_gen4_pokemon_data
+from routes.gen5 import get_gen5_pokemon_data
+from routes.gen6 import get_gen6_pokemon_data
+from routes.gen7 import get_gen7_pokemon_data
+from routes.gen8 import get_gen8_pokemon_data
+from routes.gen9 import get_gen9_pokemon_data
+
 
 app = Flask(__name__)
 
-type_color_map = {
-    "normal": [168, 168, 120],
-    "fire": [240, 128, 48],
-    "water": [104, 144, 240],
-    "electric": [248, 208, 48],
-    "grass": [120, 200, 80],
-    "ice": [152, 216, 216],
-    "fighting": [192, 48, 40],
-    "poison": [160, 64, 160],
-    "ground": [224, 192, 104],
-    "flying": [168, 144, 240],
-    "psychic": [248, 88, 136],
-    "bug": [168, 184, 32],
-    "rock": [184, 160, 56],
-    "ghost": [112, 88, 152],
-    "dragon": [112, 56, 248],
-    "dark": [112, 88, 72],
-    "steel": [184, 184, 208],
-    "fairy": [238, 153, 172],
-}
-
-
-def get_gen1_pokemon_data():
-    """Fetch data for the first 151 Pokémon."""
-    pokemon_list = []
-    base_url = "https://pokeapi.co/api/v2/pokemon"
-    for pokemon_id in range(1, 152):
-        try:
-            url = f"{base_url}/{pokemon_id}"
-            response = requests.get(url, timeout=15)
-            if response.status_code == 200:
-                data = response.json()
-
-                # Abilities
-                abilities = [
-                    {
-                        "name": ability["ability"]["name"],
-                        "is_hidden": ability["is_hidden"],
-                        "slot": ability["slot"],
-                    }
-                    for ability in data.get("abilities", [])
-                ]
-
-                # Types
-                types = [t["type"]["name"] for t in data.get("types", [])]
-
-                # Sprites
-                sprites = data.get("sprites", {})
-                images = {
-                    "official_artwork": sprites.get("other", {})
-                    .get("official-artwork", {})
-                    .get("front_default"),
-                    "front_default": sprites.get("front_default"),
-                    "front_shiny": sprites.get("front_shiny"),
-                }
-
-                # Stats
-                stats = [
-                    {
-                        "base_stat": s["base_stat"],
-                        "stat": {"name": s["stat"]["name"]}
-                    }
-                    for s in data.get("stats", [])
-                ]
-
-                pokemon_data = {
-                    "id": data["id"],
-                    "name": data["name"].capitalize(),
-                    "abilities": abilities,
-                    "types": types,
-                    "images": images,
-                    "height": data["height"],
-                    "weight": data["weight"],
-                    "base_experience": data["base_experience"],
-                    "stats": stats,
-                }
-                pokemon_list.append(pokemon_data)
-                print(f"Fetched {pokemon_data['name']} (ID: {pokemon_id})")
-            else:
-                print(f"Failed to fetch Pokemon ID {pokemon_id}")
-        except requests.RequestException as e:
-            print(f"Error fetching Pokemon ID {pokemon_id}: {e}")
-            continue
-    return pokemon_list
-
-
 @app.get("/")
 def index():
-    return render_template("index.html")
+	return render_template("index.html")
 
-
+# Gen 1 route! It will render the gen1.html template with all 151 Pokemon, 
 @app.get("/gen1")
 def gen1():
-    pokemon_data = get_gen1_pokemon_data()
-    return render_template(
-        "gen1.html", pokemon_list=pokemon_data, type_color_map=type_color_map
-    )
+	# Fetch all Gen 1 Pokemon data
+	pokemon_data = get_gen1_pokemon_data()
+	# Render gen1 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 1 Pokémon", subtitle="All 151 Original Pokémon")
 
+@app.get("/gen2")
+def gen2():
+	# Fetch all Gen 2 Pokemon data
+	pokemon_data = get_gen2_pokemon_data()
+	# Render gen2 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 2 Pokémon", subtitle="All 100 Gen 2 Pokémon")
 
+@app.get("/gen3")
+def gen3():
+	# Fetch all Gen 3 Pokemon data
+	pokemon_data = get_gen3_pokemon_data()
+	# Render gen3 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 3 Pokémon", subtitle="All 135 Gen 3 Pokémon")
+
+@app.get("/gen4")
+def gen4():
+	# Fetch all Gen 4 Pokemon data
+	pokemon_data = get_gen4_pokemon_data()
+	# Render gen4 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 4 Pokémon", subtitle="All 107 Gen 4 Pokémon")
+
+@app.get("/gen5")
+def gen5():
+	# Fetch all Gen 5 Pokemon data
+	pokemon_data = get_gen5_pokemon_data()
+	# Render gen5 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 5 Pokémon", subtitle="All 105 Gen 5 Pokémon")
+
+@app.get("/gen6")
+def gen6():
+	# Fetch all Gen 6 Pokemon data
+	pokemon_data = get_gen6_pokemon_data()
+	# Render gen6 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 6 Pokémon", subtitle="All 72 Gen 6 Pokémon")
+
+@app.get("/gen7")
+def gen7():
+	# Fetch all Gen 7 Pokemon data
+	pokemon_data = get_gen7_pokemon_data()
+	# Render gen7 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 7 Pokémon", subtitle="All 87 Gen 7 Pokémon")
+
+@app.get("/gen8")
+def gen8():
+	# Fetch all Gen 8 Pokemon data
+	pokemon_data = get_gen8_pokemon_data()
+	# Render gen8 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 8 Pokémon", subtitle="All 189 Gen 8 Pokémon")
+
+@app.get("/gen9")
+def gen9():
+	# Fetch all Gen 9 Pokemon data
+	pokemon_data = get_gen9_pokemon_data()
+	# Render gen9 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
+	return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 9 Pokémon", subtitle="All 100 Gen 9 Pokémon")
+
+# This is the API route! It will return a JSON response from our call. 502 is bad gateway. set the timeout to 15 seconds but can change as needed
 @app.get("/api/pokemon/<string:name>")
-def get_pokemon(name: str):
-    url = f"https://pokeapi.co/api/v2/pokemon/{name.lower()}"
-    try:
-        resp = requests.get(url, timeout=15)
-    except requests.RequestException:
-        return jsonify({"error": "Upstream request failed"}), 502
-    if resp.status_code != 200:
-        return jsonify({"error": "Pokémon not found"}), 404
-
-    data = resp.json()
-
-    result = {
-        "id": data.get("id"),
-        "name": data.get("name"),
-        "abilities": [],
-        "types": [],
-        "stats": [],
-        "images": {},
-        "height": data.get("height"),
-        "weight": data.get("weight"),
-        "base_experience": data.get("base_experience"),
-    }
-
-    # Abilities
-    for ability in data.get("abilities", []):
-        result["abilities"].append({
-            "name": (ability.get("ability") or {}).get("name"),
-            "is_hidden": ability.get("is_hidden"),
-            "slot": ability.get("slot"),
-        })
-
-    # Types
-    for type_info in data.get("types", []):
-        result["types"].append((type_info.get("type") or {}).get("name"))
-
-    # Stats
-    for stat_info in data.get("stats", []):
-        result["stats"].append({
-            "base_stat": stat_info.get("base_stat"),
-            "stat": {"name": (stat_info.get("stat") or {}).get("name")}
-        })
-
-    # Images
-    sprites = data.get("sprites", {})
-    result["images"] = {
-        "official_artwork": sprites.get("other", {})
-        .get("official-artwork", {})
-        .get("front_default"),
-        "front_default": sprites.get("front_default"),
-        "front_shiny": sprites.get("front_shiny"),
-    }
-
-    return jsonify(result)
-
+def searchPokemon(name):
+	pokemonData = get_pokemon(name)
+	return pokemonData
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+	app.run(host="0.0.0.0", port=5001, debug=True)

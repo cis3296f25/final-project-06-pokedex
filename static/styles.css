@@ -168,6 +168,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     margin-bottom: 12px;
+    margin-left: -2px; /* center pokemon image */
     position: relative;
     overflow: hidden;
 }

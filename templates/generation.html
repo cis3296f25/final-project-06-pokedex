@@ -1,24 +1,26 @@
 <!doctype html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Generation 1 Pokémon</title>
+	<title>{{ title }}</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
-
 <body>
 	<main class="container">
 		<nav class="nav-links">
 			<a href="/" class="nav-link">Back to Search</a>
 		</nav>
-		<h1>Generation 1 Pokémon</h1>
-		<p class="subtitle">All 151 Original Pokémon</p>
+
+		<h1>{{ title }}</h1>
+		<p class="subtitle">{{ subtitle }}</p>
+
 		<div class="pokemon-list">
 			{% for pokemon in pokemon_list %}
-			<div class="pokemon-card" data-pokemon-id="{{ pokemon.id }}" data-main-type="{{ pokemon.types[0].lower() }}">
-					<div class="card-header">
+			<div class="pokemon-card" data-main-type="{{ pokemon.types[0]|lower }}">
+				
+				<!-- Card Header -->
+				<div class="card-header">
 					<h3 class="pokemon-name">{{ pokemon.name }}</h3>
 					<div class="pokemon-hp">
 						{% set hp_stat = pokemon.stats | selectattr("stat.name", "equalto", "hp") | list %}
@@ -31,7 +33,7 @@
 					</div>
 				</div>
 
-
+				<!-- Card Image -->
 				<div class="card-image-container">
 					<div class="pokemon-id-badge">#{{ '%03d'|format(pokemon.id) }}</div>
 					{% if pokemon.images.official_artwork %}
@@ -43,6 +45,7 @@
 					{% endif %}
 				</div>
 
+				<!-- Type Section -->
 				<div class="type-section">
 					<div class="type-label">Type</div>
 					<div class="pokemon-types">
@@ -52,13 +55,14 @@
 					</div>
 				</div>
 
+				<!-- Abilities Section -->
 				<div class="abilities-section">
 					<h4>Abilities</h4>
 					<div class="ability-list">
 						{% for ability in pokemon.abilities %}
 						<div class="ability-item">
 							<div class="ability-icon">⚡</div>
-							<span class="ability-name">{{ ability.name }}</span>
+							<span class="ability-name">{{ ability.name.replace('-', ' ').title() }}</span>
 							{% if ability.is_hidden %}
 							<span class="ability-hidden">Hidden</span>
 							{% endif %}
@@ -67,6 +71,7 @@
 					</div>
 				</div>
 
+				<!-- Card Footer -->
 				<div class="card-footer">
 					<span>© Pokémon</span>
 					<span class="rarity">★ Rare</span>
@@ -78,7 +83,6 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			// Define border colors for each Pokémon type
 			const typeBorderColors = {
 				normal: '#A8A878',
 				fire: '#F08030',
@@ -100,15 +104,11 @@
 				fairy: '#EE99AC'
 			};
 
-			// Apply border colors based on Pokémon type
-			const pokemonCards = document.querySelectorAll('.pokemon-card');
-			pokemonCards.forEach(card => {
+			document.querySelectorAll('.pokemon-card').forEach(card => {
 				const mainType = card.getAttribute('data-main-type');
-				const borderColor = typeBorderColors[mainType] || '#ffd700'; // Fallback to gold if type not found
-				card.style.borderColor = borderColor;
+				card.style.borderColor = typeBorderColors[mainType] || '#ffd700';
 			});
 		});
 	</script>
 </body>
-
 </html>
