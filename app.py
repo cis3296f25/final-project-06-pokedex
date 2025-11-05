@@ -13,7 +13,6 @@ from routes.gen9 import get_gen9_pokemon_data
 
 app = Flask(__name__)
 
-# Root route! It will render the index.html template that we've created!
 @app.get("/")
 def index():
 	return render_template("index.html")
@@ -89,4 +88,4 @@ def searchPokemon(name):
 	return pokemonData
 
 if __name__ == "__main__":
-	app.run(host="0.0.0.0", port=5000, debug=True)
+	app.run(host="0.0.0.0", port=5001, debug=True)
