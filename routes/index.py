@@ -11,7 +11,7 @@ def get_pokemon(name):
 	except requests.RequestException:
 		return jsonify({"error": "Upstream request failed"}), 502
 
-	# possible error if bad name or somthing like that, 404 is not found.
+	# possible error if bad name or something like that, 404 is not found.
 	if resp.status_code != 200:
 		return jsonify({"error": "Pokémon not found"}), 404
 
@@ -23,8 +23,16 @@ def get_pokemon(name):
 		"id": data.get("id"),
 		"name": data.get("name"),
 		"abilities": [],
-		"types": []
+		"types": [],
+		"hp": 50  # Default fallback
 	}
+	
+	# Extract HP stat
+	stats_data = data.get("stats") or []
+	for stat in stats_data:
+		if (stat.get("stat") or {}).get("name") == "hp":
+			result["hp"] = stat.get("base_stat", 50)
+			break
 	
 	# iterate abilities
 	abilities_data = data.get("abilities") or []

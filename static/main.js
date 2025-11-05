@@ -47,32 +47,8 @@
 		const card = document.createElement('div');
 		card.classList.add('pokemon-card');
 		
-		// Let me check what data structure we actually have
-		console.log("Pokémon data received:", data);
-		
-		// Extract HP from the actual API response structure
-		let hp = 50; // Default fallback
-		
-		if (data.stats && Array.isArray(data.stats)) {
-			const hpStat = data.stats.find(stat => stat.stat.name === 'hp');
-			if (hpStat) hp = hpStat.base_stat;
-		}
-		
-		// Check if HP is directly in the data (your custom API might have it)
-		else if (data.hp) {
-			hp = data.hp;
-			console.log("HP found directly in data:", hp);
-		}
-		// Check if we have base_stats object (alternative structure)
-		else if (data.base_stats && data.base_stats.hp) {
-			hp = data.base_stats.hp;
-			console.log("HP found in base_stats:", hp);
-		}
-		// Last resort: use the ID-based calculation your API seems to use
-		else {
-			hp = (data.id || 1) * 10;
-			console.log("Using fallback HP calculation:", hp);
-		}
+		// Use the actual HP from the API response, fallback to calculation if not available
+		const hp = data.hp || (data.id || 1) * 10;
 		
 		// Format ID with leading zeros
 		const formattedId = String(data.id || 0).padStart(3, '0');
@@ -119,7 +95,7 @@
 				<div class="ability-list">
 					${(data.abilities || []).map(ability => `
 						<div class="ability-item">
-							<div class="ability-icon">⚡</div>
+							<div class="ability-icon">⭐</div>
 							<span class="ability-name">${ability.name}</span>
 							${ability.is_hidden ? '<span class="ability-hidden">Hidden</span>' : ''}
 						</div>
@@ -129,7 +105,6 @@
 			
 			<div class="card-footer">
 				<span>© Pokémon</span>
-				<span class="rarity">★ Rare</span>
 			</div>
 		`;
 		

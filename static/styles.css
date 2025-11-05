@@ -141,13 +141,13 @@ button:hover {
     margin-bottom: 10px;
 }
 .pokemon-card .pokemon-name {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     text-transform: capitalize;
     margin: 0;
 }
 .pokemon-card .pokemon-hp {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #e74c3c;
     text-align: right;
@@ -289,4 +289,3 @@ button:hover {
     margin-top: auto;
     padding-top: 8px;
 }
-.pokemon-card .rarity { font-weight: bold; color: #f39c12; }

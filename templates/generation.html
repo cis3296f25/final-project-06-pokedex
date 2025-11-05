@@ -23,9 +23,8 @@
 				<div class="card-header">
 					<h3 class="pokemon-name">{{ pokemon.name }}</h3>
 					<div class="pokemon-hp">
-						{% set hp_stat = pokemon.stats | selectattr("stat.name", "equalto", "hp") | list %}
-						{% if hp_stat %}
-							{{ hp_stat[0].base_stat }}
+						{% if pokemon.hp %}
+							{{ pokemon.hp }}
 						{% else %}
 							{{ pokemon.id * 10 }}
 						{% endif %}
@@ -61,7 +60,7 @@
 					<div class="ability-list">
 						{% for ability in pokemon.abilities %}
 						<div class="ability-item">
-							<div class="ability-icon">⚡</div>
+							<div class="ability-icon">⭐</div>
 							<span class="ability-name">{{ ability.name.replace('-', ' ').title() }}</span>
 							{% if ability.is_hidden %}
 							<span class="ability-hidden">Hidden</span>
@@ -74,7 +73,6 @@
 				<!-- Card Footer -->
 				<div class="card-footer">
 					<span>© Pokémon</span>
-					<span class="rarity">★ Rare</span>
 				</div>
 			</div>
 			{% endfor %}
