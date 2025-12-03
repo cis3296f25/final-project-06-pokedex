@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='pokemon-modal.css') }}" />
+</head>
+<body>
+	<div class="wrapper">
+		<input id="sidebar-toggler-input" type="checkbox" style="display:none;" />
+		<label class="sidebar-toggler" for="sidebar-toggler-input">
+			<svg viewBox="0 0 448 512" width="100" title="bars" class="sidebar-toggler-icon">
+				<path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+			</svg>
+		</label>
+		<aside class="sidebar">
+			<div class="sidebar-content">
+				<div class="padding">
+					<nav>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/gen1">Generation 1</a></li>
+							<li><a href="/gen2">Generation 2</a></li>
+							<li><a href="/gen3">Generation 3</a></li>
+							<li><a href="/gen4">Generation 4</a></li>
+							<li><a href="/gen5">Generation 5</a></li>
+							<li><a href="/gen6">Generation 6</a></li>
+							<li><a href="/gen7">Generation 7</a></li>
+							<li><a href="/gen8">Generation 8</a></li>
+							<li><a href="/gen9">Generation 9</a></li>
+							<li><a href="/team">Team Builder</a></li>
+							<li><a href="/account">Account</a></li>
+						</ul>
+					</nav>
+					<label for="sidebar-toggler-input" class="sidebar-close" style="display:block;margin-top:2rem;cursor:pointer;">Close</label>
+				</div>
+			</div>
+			</aside>
+
+		<h1>{{ title }}</h1>
+		<p class="subtitle">{{ subtitle }}</p>
+
+		<div class="pokemon-list">
+			{% for pokemon in pokemon_list %}
+			<div class="pokemon-card clickable-pokemon" data-main-type="{{ pokemon.types[0]|lower }}" data-pokemon-id="{{ pokemon.id }}">
+				
+				<!-- Card Header -->
+				<div class="card-header">
+					<h3 class="pokemon-name">{{ pokemon.name }}</h3>
+					<div class="pokemon-hp">
+						{% set hp_stat = pokemon.stats | selectattr("name", "equalto", "hp") | first %}
+						{% if hp_stat %}
+							{{ hp_stat.base_stat }}
+						{% else %}
+							{{ pokemon.id * 10 }}
+						{% endif %}
+						<span>HP</span>
+					</div>
+				</div>
+
+				<!-- Card Image -->
+				<div class="card-image-container">
+					<div class="pokemon-id-badge">#{{ '%03d'|format(pokemon.id) }}</div>
+					{% if pokemon.images.official_artwork %}
+					<img src="{{ pokemon.images.official_artwork }}" alt="{{ pokemon.name }}" loading="lazy">
+					{% elif pokemon.images.front_default %}
+					<img src="{{ pokemon.images.front_default }}" alt="{{ pokemon.name }}" loading="lazy">
+					{% else %}
+					<div class="no-image">No Image</div>
+					{% endif %}
+				</div>
+
+				<!-- Type Section -->
+				<div class="type-section">
+					<div class="type-label">Type</div>
+					<div class="pokemon-types">
+						{% for type in pokemon.types %}
+						<span class="type {{ type|lower }}">{{ type.title() }}</span>
+						{% endfor %}
+					</div>
+				</div>
+
+				<!-- Abilities Section -->
+				<div class="abilities-section">
+					<h4>Abilities</h4>
+					<div class="ability-list">
+						{% for ability in pokemon.abilities %}
+						<div class="ability-item">
+							<div class="ability-icon">⭐</div>
+							<span class="ability-name">{{ ability.name.replace('-', ' ').title() }}</span>
+							{% if ability.is_hidden %}
+							<span class="ability-hidden">Hidden</span>
+							{% endif %}
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+
+				<!-- Card Footer -->
+				<div class="card-footer">
+					<span>© Pokémon</span>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</main>
+
+	<!-- Pokemon Detail Modal -->
+	<div id="pokemon-modal-overlay" class="pokemon-modal-overlay">
+		<div class="pokemon-modal">
+			<button id="modal-close" class="pokemon-modal-close">&times;</button>
+			<article class="pokedex-card" aria-label="Pokémon card">
+				<!-- LEFT: image & basic -->
+				<div class="card-left">
+					<div class="poke-image-wrap" aria-hidden="false">
+						<img id="modal-pokemon-image" class="poke-image" src="" alt="" />
+					</div>
+
+					<div class="id-name">
+						<div class="poke-id" id="modal-poke-id">#000</div>
+						<div class="poke-name" id="modal-poke-name">Loading...</div>
+						<div class="type-badges" id="modal-type-badges">
+							<!-- Types will be populated here -->
+						</div>
+					</div>
+
+					<div class="meta-row" aria-hidden="false" style="margin-top:8px;">
+						<div class="meta-item" id="modal-height">Height: - m</div>
+						<div class="meta-item" id="modal-weight">Weight: - kg</div>
+						<div class="meta-item" id="modal-species">Species: -</div>
+					</div>
+
+				</div>
+
+				<!-- RIGHT: details & stats -->
+				<div class="card-right">
+
+					<div>
+						<div class="section-title">About</div>
+						<p class="muted" id="modal-pokedex-entry">
+							Loading description...
+						</p>
+					</div>
+
+					<div>
+						<div class="section-title">Abilities</div>
+						<div class="abilities" id="modal-abilities">
+							<!-- Abilities will be populated here -->
+						</div>
+					</div>
+
+					<div>
+						<div class="section-title">Base Stats</div>
+						<div class="stats-grid" id="modal-stats-grid">
+							<!-- Stats will be populated here -->
+						</div>
+					</div>
+
+					<div>
+						<div class="section-title">Weaknesses / Notes</div>
+						<p class="muted" id="modal-weaknesses">Loading...</p>
+					</div>
+
+					<div class="card-actions" aria-hidden="false">
+						<button class="btn primary" id="btn-add-fav" aria-pressed="false">Add to Favorites</button>
+						<button class="btn ghost" id="btn-view-more">Close</button>
+					</div>
+
+				</div>
+			</article>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const typeBorderColors = {
+				normal: '#A8A878',
+				fire: '#F08030',
+				water: '#6890F0',
+				electric: '#F8D030',
+				grass: '#78C850',
+				ice: '#98D8D8',
+				fighting: '#C03028',
+				poison: '#A040A0',
+				ground: '#E0C068',
+				flying: '#A890F0',
+				psychic: '#F85888',
+				bug: '#A8B820',
+				rock: '#B8A038',
+				ghost: '#705898',
+				dragon: '#7038F8',
+				dark: '#705848',
+				steel: '#B8B8D0',
+				fairy: '#EE99AC'
+			};
+
+
+			// Apply border colors and tilt effect to all cards
+			document.querySelectorAll('.pokemon-card').forEach(card => {
+				const mainType = card.getAttribute('data-main-type');
+				card.style.borderColor = typeBorderColors[mainType] || '#ffd700';
+			});
+
+			// Add click handlers for Pokemon cards
+			document.querySelectorAll('.clickable-pokemon').forEach(card => {
+				card.style.cursor = 'pointer';
+				card.addEventListener('click', function() {
+					const pokemonId = this.getAttribute('data-pokemon-id');
+					if (pokemonId) {
+						showPokemonModal(pokemonId);
+					}
+				});
+			});
+
+			// Modal functionality
+			const modal = document.getElementById('pokemon-modal-overlay');
+			const closeBtn = document.getElementById('modal-close');
+			const viewMoreBtn = document.getElementById('btn-view-more');
+			
+			if (modal && closeBtn && viewMoreBtn) {
+				closeBtn.addEventListener('click', closePokemonModal);
+				viewMoreBtn.addEventListener('click', closePokemonModal);
+				modal.addEventListener('click', function(e) {
+					if (e.target === modal) {
+						closePokemonModal();
+					}
+				});
+			}
+
+			function showPokemonModal(pokemonId) {
+				modal.classList.add('active');
+				document.body.style.overflow = 'hidden';
+				
+				// Fetch Pokemon details
+				fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
+					.then(response => response.json())
+					.then(pokemon => {
+						populateModal(pokemon);
+						
+						// Fetch species data for description
+						return fetch(pokemon.species.url);
+					})
+					.then(response => response.json())
+					.then(species => {
+						updateModalDescription(species);
+					})
+					.catch(error => {
+						console.error('Error fetching Pokemon data:', error);
+						document.getElementById('modal-pokedex-entry').textContent = 'Failed to load Pokemon information.';
+					});
+			}
+
+			function closePokemonModal() {
+				modal.classList.remove('active');
+				document.body.style.overflow = '';
+			}
+
+			function populateModal(pokemon) {
+				// Basic info
+				document.getElementById('modal-poke-id').textContent = `#${String(pokemon.id).padStart(3, '0')}`;
+				document.getElementById('modal-poke-name').textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+				
+				// Image
+				const image = document.getElementById('modal-pokemon-image');
+				image.src = pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default;
+				image.alt = pokemon.name + ' artwork';
+				
+				// Types
+				const typeBadges = document.getElementById('modal-type-badges');
+				typeBadges.innerHTML = '';
+				pokemon.types.forEach(typeInfo => {
+					const span = document.createElement('span');
+					span.className = `type ${typeInfo.type.name}`;
+					span.textContent = typeInfo.type.name;
+					typeBadges.appendChild(span);
+				});
+				
+				// Meta info
+				document.getElementById('modal-height').textContent = `Height: ${pokemon.height / 10} m`;
+				document.getElementById('modal-weight').textContent = `Weight: ${pokemon.weight / 10} kg`;
+				
+				// Abilities
+				const abilities = document.getElementById('modal-abilities');
+				abilities.innerHTML = '';
+				pokemon.abilities.forEach(abilityInfo => {
+					const span = document.createElement('span');
+					span.className = 'ability';
+					span.textContent = abilityInfo.ability.name.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+					if (abilityInfo.is_hidden) {
+						span.textContent += ' (Hidden)';
+					}
+					abilities.appendChild(span);
+				});
+				
+				// Stats
+				const statsGrid = document.getElementById('modal-stats-grid');
+				statsGrid.innerHTML = '';
+				const statNames = {
+					'hp': 'HP',
+					'attack': 'Attack',
+					'defense': 'Defense',
+					'special-attack': 'Sp. Atk',
+					'special-defense': 'Sp. Def',
+					'speed': 'Speed'
+				};
+				const statClasses = {
+					'hp': 'hp',
+					'attack': 'atk',
+					'defense': 'def',
+					'special-attack': 'spatk',
+					'special-defense': 'spdef',
+					'speed': 'spd'
+				};
+				
+				pokemon.stats.forEach(statInfo => {
+					const statDiv = document.createElement('div');
+					statDiv.className = 'stat';
+					
+					const labelDiv = document.createElement('div');
+					labelDiv.className = 'stat-label';
+					labelDiv.innerHTML = `<span>${statNames[statInfo.stat.name]}</span><span>${statInfo.base_stat}</span>`;
+					
+					const progressOuter = document.createElement('div');
+					progressOuter.className = 'progress-outer';
+					
+					const progressInner = document.createElement('div');
+					progressInner.className = `progress-inner ${statClasses[statInfo.stat.name]}`;
+					progressInner.style.width = `${Math.min((statInfo.base_stat / 255) * 100, 100)}%`;
+					progressInner.setAttribute('role', 'progressbar');
+					progressInner.setAttribute('aria-valuemin', '0');
+					progressInner.setAttribute('aria-valuemax', '255');
+					progressInner.setAttribute('aria-valuenow', statInfo.base_stat);
+					
+					progressOuter.appendChild(progressInner);
+					statDiv.appendChild(labelDiv);
+					statDiv.appendChild(progressOuter);
+					statsGrid.appendChild(statDiv);
+				});
+			}
+
+			function updateModalDescription(species) {
+				// Find English flavor text
+				const flavorTexts = species.flavor_text_entries.filter(entry => entry.language.name === 'en');
+				if (flavorTexts.length > 0) {
+					document.getElementById('modal-pokedex-entry').textContent = flavorTexts[0].flavor_text.replace(/\f/g, ' ');
+				}
+				
+				// Update species info
+				if (species.genera) {
+					const englishGenus = species.genera.find(genus => genus.language.name === 'en');
+					if (englishGenus) {
+						document.getElementById('modal-species').textContent = `Species: ${englishGenus.genus}`;
+					}
+				}
+				
+				// Basic type effectiveness (simplified)
+				document.getElementById('modal-weaknesses').textContent = 'Type effectiveness varies based on opponent.';
+			}
+		});
+	</script>
+	<script src="{{ url_for('static', filename='card-tilt.js') }}"></script>
+</body>
+</html>

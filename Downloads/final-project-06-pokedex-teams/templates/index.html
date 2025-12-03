@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pocket Pokédex</title>
+    	<link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}" />
+	<!-- This is the stylesheet for the page that is being triggered by the Flask app -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='pokemon-modal.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <input id="sidebar-toggler-input" type="checkbox" style="display:none;" />
+        <label class="sidebar-toggler" for="sidebar-toggler-input">
+            <svg viewBox="0 0 448 512" width="100" title="bars" class="sidebar-toggler-icon">
+                <path
+                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </label>
+
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="padding">
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/gen1">Generation 1</a></li>
+                            <li><a href="/gen2">Generation 2</a></li>
+                            <li><a href="/gen3">Generation 3</a></li>
+                            <li><a href="/gen4">Generation 4</a></li>
+                            <li><a href="/gen5">Generation 5</a></li>
+                            <li><a href="/gen6">Generation 6</a></li>
+                            <li><a href="/gen7">Generation 7</a></li>
+                            <li><a href="/gen8">Generation 8</a></li>
+                            <li><a href="/gen9">Generation 9</a></li>
+                            <li><a href="/team">Team Builder</a></li>
+							<li><a href="/account">Account</a></li>
+                        </ul>
+                    </nav>
+                    <label for="sidebar-toggler-input" class="sidebar-close"
+                        style="display:block;margin-top:2rem;cursor:pointer;">Close</label>
+                </div>
+            </div>
+        </aside>
+        <main class="container">
+            <h1>Pokémon Lookup</h1>
+            <form id="search-form">
+                <input id="name-input" type="text" placeholder="Enter Pokémon name (e.g., pikachu)" />
+                <button type="submit">Search</button>
+            </form>
+
+            <section id="result" class="hidden pokemon-list"></section>
+            <p id="error" class="error hidden"></p>
+
+            <!-- Card Template -->
+            <template id="card-template">
+                <div class="pokemon-card" data-main-type="">
+                    <div class="card-header">
+                        <h3 class="pokemon-name"></h3>
+                        <div class="pokemon-hp"><span>HP</span></div>
+                    </div>
+                    <div class="card-image-container">
+                        <div class="pokemon-id-badge"></div>
+                        <img src="" alt="" loading="lazy">
+                    </div>
+                    <div class="type-section">
+                        <div class="type-label">Type</div>
+                        <div class="pokemon-types"></div>
+                    </div>
+                    <div class="abilities-section">
+                        <h4>Abilities</h4>
+                        <div class="ability-list"></div>
+                    </div>
+                    <div class="card-footer">
+                        <span>© Pokémon</span>
+                    </div>
+                </div>
+            </template>
+        </main>
+    </div>
+
+    <!-- Pokemon Detail Modal -->
+    <div id="pokemon-modal-overlay" class="pokemon-modal-overlay">
+        <div class="pokemon-modal">
+            <button id="modal-close" class="pokemon-modal-close">&times;</button>
+            <article class="pokedex-card" aria-label="Pokémon card">
+                <!-- LEFT: image & basic -->
+                <div class="card-left">
+                    <div class="poke-image-wrap" aria-hidden="false">
+                        <img id="modal-pokemon-image" class="poke-image" src="" alt="" />
+                    </div>
+
+                    <div class="id-name">
+                        <div class="poke-id" id="modal-poke-id">#000</div>
+                        <div class="poke-name" id="modal-poke-name">Loading...</div>
+                        <div class="type-badges" id="modal-type-badges">
+                            <!-- Types will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="meta-row" aria-hidden="false" style="margin-top:8px;">
+                        <div class="meta-item" id="modal-height">Height: - m</div>
+                        <div class="meta-item" id="modal-weight">Weight: - kg</div>
+                        <div class="meta-item" id="modal-species">Species: -</div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT: details & stats -->
+                <div class="card-right">
+
+                    <div>
+                        <div class="section-title">About</div>
+                        <p class="muted" id="modal-pokedex-entry">
+                            Loading description...
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="section-title">Abilities</div>
+                        <div class="abilities" id="modal-abilities">
+                            <!-- Abilities will be populated here -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="section-title">Base Stats</div>
+                        <div class="stats-grid" id="modal-stats-grid">
+                            <!-- Stats will be populated here -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="section-title">Weaknesses / Notes</div>
+                        <p class="muted" id="modal-weaknesses">Loading...</p>
+                    </div>
+
+                    <div class="card-actions" aria-hidden="false">
+                        <!-- <button class="btn primary" id="btn-add-fav" aria-pressed="false">Add to Favorites</button> -->
+                        <button class="btn ghost" id="btn-view-more">Close</button>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='card-tilt.js') }}"></script>
+</body>
+
+</html>

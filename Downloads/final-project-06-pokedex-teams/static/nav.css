@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+:root {
+	--color-neutral-100: oklch(0.141 0.005 285.823);
+	--color-neutral-200: oklch(0.21 0.006 285.885);
+	--color-accent: oklch(0.685 0.169 237.323);
+	--color-accent-hover: oklch(0.588 0.158 241.966);
+	--color-text: oklch(0.985 0 0);
+	--rounding: .5rem;
+	--sidebar-toggler-size: 3rem;
+	--font: Geist Mono, monospace;
+}
+
+
+@property --sidebar-width {
+  syntax: '<number>'; 
+  initial-value: 0;
+  inherits: true;
+}
+
+@keyframes openSidebar {
+	from {
+		--sidebar-width: 0
+	}
+	to {
+		--sidebar-width: 16;
+	}
+}
+
+@keyframes closeSidebar {
+	from {
+		--sidebar-width: 16;
+	}
+	to {
+		--sidebar-width: 0
+	}
+}
+
+body {
+	color: var(--color-text);
+	background: var(--color-neutral-100);
+	font-family: var(--font);
+}
+
+.wrapper {
+	background: var(--color-neutral-100);
+	container-type: inline-size;
+}
+
+.wrapper:has(#sidebar-toggler-input:checked) {
+	--sidebar-width: 16;
+}
+.wrapper:not(:has(#sidebar-toggler-input:checked)) {
+	--sidebar-width: 0;
+}
+
+
+.sidebar {
+	z-index: 40;
+	background-color: var(--color-accent);
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	align-items: stretch;
+	justify-content: stretch;
+	width: 16rem;
+	transform: translateX(calc((var(--sidebar-width) - 16) * 1rem));
+	transition: transform 0.25s ease;
+}
+
+.sidebar-content {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+/* Add padding to nav list to avoid overlap with hamburger menu */
+.sidebar nav ul {
+	padding-top: 6rem;
+  list-style: none;
+}
+
+.sidebar nav ul li {
+	margin-bottom: 10px;
+} 
+
+/* Sidebar nav links default to white */
+.sidebar nav a {
+	color: #fff;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+.sidebar nav a:hover {
+	color: var(--color-accent-hover);
+}
+
+.sidebar-toggler {
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-accent);
+	height: var(--sidebar-toggler-size);
+	width: var(--sidebar-toggler-size);
+	border: 0;
+	border-radius: var(--rounding);
+	cursor: pointer;
+	transition: .15s ease;
+	z-index: 100;
+}
+
+.sidebar-toggler-icon {
+	fill: var(--color-text);
+	height: calc(var(--sidebar-toggler-size) * 0.5);
+	width: calc(var(--sidebar-toggler-size) * 0.5);
+}
+
+.sidebar-toggler:hover {
+	background: var(--color-accent-hover);
+}
+
+.sidebar-close {
+	display: block;
+	background: var(--color-accent-hover);
+	color: var(--color-text);
+	padding: 0.5rem 1rem;
+	border-radius: var(--rounding);
+	text-align: center;
+	margin: 2rem auto 0 auto;
+	width: 80%;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.sidebar-close:hover {
+	background: var(--color-accent);
+}
+
+
+
+.content {
+	position: relative;
+	background: var(--color-neutral-200);
+	padding: 3rem 2rem 1rem;
+	> * {
+		max-width: 48rem;
+	}
+}
+
+.padding {
+	padding: 1rem;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+	transition: .2s ease color;
+	&:hover {
+		color: var(--color-accent-hover);
+	}
+}
