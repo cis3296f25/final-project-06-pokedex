@@ -8,28 +8,21 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='team.css') }}" />
 </head>
 
 <body class="team-page">
     <div class="wrapper">
-
-        <!-- Sidebar toggle checkbox -->
         <input id="sidebar-toggler-input" type="checkbox" style="display:none;" />
-
-        <!-- Hamburger -->
-        <label class="sidebar-toggler" for="sidebar-toggler-input">
-            <svg viewBox="0 0 448 512" class="sidebar-toggler-icon">
-                <path
-                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
-            </svg>
-        </label>
-
-        <!-- Sidebar -->
+		<label class="sidebar-toggler" for="sidebar-toggler-input">
+			<svg viewBox="0 0 448 512" width="100" title="bars" class="sidebar-toggler-icon">
+				<path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+		    </svg>
+	    </label>
         <aside class="sidebar">
             <div class="sidebar-content">
                 <div class="padding">
-                    <h2 class="sidebar-title">Pocket Pokédex</h2>
                     <nav>
                         <ul>
                             <li><a href="/">Home</a></li>
@@ -42,10 +35,67 @@
                             <li><a href="/gen7">Generation 7</a></li>
                             <li><a href="/gen8">Generation 8</a></li>
                             <li><a href="/gen9">Generation 9</a></li>
-                            <li><a href="/team" class="active">Team Builder</a></li>
-                        </ul>
-                    </nav>
-                    <label for="sidebar-toggler-input" class="sidebar-close">Close</label>
+                            <li><a href="/team">Team Builder</a></li>
+                            <li><a href="/account">Account</a></li>
+                        </ul>                        </nav>
+                    <label for="sidebar-toggler-input" class="sidebar-close" style="display:block;margin-top:2rem;cursor:pointer;">Close</label>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div class="team-container">
+
+        <header class="team-header">
+            <h1>Team Builder</h1>
+            <p class="team-subtitle">
+                Build up to six Pokémon. Search below and click “Add to Team”.
+            </p>
+        </header>
+
+
+        <section class="team-controls">
+            <div class="team-name-group">
+                <label for="team-name-input">Team:</label>
+                <input id="team-name-input" type="text" placeholder="Team name (e.g., Kanto Sweep)" />
+                <span id="team-status" class="team-status">(unsaved)</span>
+            </div>
+
+            <div class="team-buttons">
+                <button id="save-team-btn" type="button" class="btn btn-primary">
+                    Save Team
+                </button>
+                <button id="export-team-btn" type="button" class="btn btn-secondary">
+                    Export JSON
+                </button>
+                <button id="clear-team-btn" type="button" class="btn btn-danger">
+                    Clear Team
+                </button>
+            </div>
+        </section>
+
+        <section class="team-slots" id="team-slots">
+            <div class="team-slot" data-index="0">
+                <div class="slot-label">#1</div>
+                <div class="slot-content">
+                    <span class="slot-empty">Empty Slot</span>
+                </div>
+            </div>
+            <div class="team-slot" data-index="1">
+                <div class="slot-label">#2</div>
+                <div class="slot-content">
+                    <span class="slot-empty">Empty Slot</span>
+                </div>
+            </div>
+            <div class="team-slot" data-index="2">
+                <div class="slot-label">#3</div>
+                <div class="slot-content">
+                    <span class="slot-empty">Empty Slot</span>
+                </div>
+            </div>
+            <div class="team-slot" data-index="3">
+                <div class="slot-label">#4</div>
+                <div class="slot-content">
+                    <span class="slot-empty">Empty Slot</span>
                 </div>
             </div>
         </aside>

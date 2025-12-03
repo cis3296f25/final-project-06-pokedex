@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+import json
+from flask import Flask, jsonify, render_template, session, redirect, request
+from werkzeug.security import generate_password_hash, check_password_hash
 from routes.gen1 import get_gen1_pokemon_data
 from routes.index import get_pokemon
 from routes.gen2 import get_gen2_pokemon_data
@@ -9,9 +11,41 @@ from routes.gen6 import get_gen6_pokemon_data
 from routes.gen7 import get_gen7_pokemon_data
 from routes.gen8 import get_gen8_pokemon_data
 from routes.gen9 import get_gen9_pokemon_data
+import sqlite3
 
 
 app = Flask(__name__)
+app.secret_key = "secret-key-tochange"
+
+#Connect to database
+def db():
+	return sqlite3.connect("users.db", check_same_thread=False)
+
+def init_db():
+	conn = sqlite3.connect("users.db")
+	conn.execute("""
+		CREATE TABLE IF NOT EXISTS users (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			first_name TEXT,
+			last_name TEXT,
+			email CHAR UNIQUE,
+			password CHAR
+		)
+	""")
+	conn.execute("""
+		CREATE TABLE IF NOT EXISTS teams (
+			  team_id INTEGER PRIMARY KEY AUTOINCREMENT,
+			  user_id INTEGER,
+			  name TEXT,
+			  members TEXT,
+			  FOREIGN KEY (user_id) REFERENCES users(id)
+			)
+		""")
+	conn.commit()
+	conn.close()
+
+def current_user():
+	return session.get("email")
 
 # Root route! It will render the index.html template that we've created!
 @app.get("/")
@@ -83,6 +117,65 @@ def gen9():
     # Render gen9 template with the pokemon data being passed into it from Flask, please read how Flask is handling this
     return render_template("generation.html", pokemon_list=pokemon_data, title="Generation 9 Pokémon", subtitle="All 120 Gen 9 Pokémon")
 
+# Account page
+@app.get("/account")
+def account():
+	if "email" not in session:
+		return redirect("/login")
+	return render_template("account.html", title="Account Information", user=session.get("first_name"), email=session.get("email"))
+
+@app.get("/login")
+def login_page():
+    return render_template("account.html", user=None)
+
+@app.post("/login")
+def login():
+	email = request.form.get("email")
+	password = request.form.get("password")
+	conn = db()
+	data = conn.execute("SELECT * FROM users WHERE email = ?", (email,)).fetchone()
+	conn.close()
+
+	if not data:
+		return render_template("account.html", error="Account does not exist.", data=None)
+	if not check_password_hash(data[4], password):
+		return render_template("account.html", error="Incorrect password", data=None)
+	
+	session["user_id"] = data[0]
+	session["email"] = data[3]
+	session["first_name"] = data[1]
+	session["last_name"] = data[2]
+	return render_template("account.html", user=session["first_name"], email=session["email"])
+
+@app.route("/signup", methods=['GET', 'POST'])
+def signup():
+	if request.method == "GET":
+		return render_template("signup.html")
+	
+	first_name = request.form.get("first_name")
+	last_name = request.form.get("last_name")
+	email = request.form.get("email")
+	password = request.form.get("password")
+	hashed_pw = generate_password_hash(password)
+
+	try:
+		conn = db()
+		conn.execute("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)", (first_name, last_name, email, hashed_pw))
+		conn.commit()
+		conn.close()
+	except:
+		return render_template("account.html", error="Email already exists.", user=None)
+	
+	session["email"] = email
+	session["first_name"] = first_name
+	session["last_name"] = last_name
+	return redirect("/account")
+
+@app.get("/logout")
+def logout():
+	session.clear()
+	return redirect("/account")
+
 # Team Builder page
 @app.get("/team")
 def team():
@@ -99,4 +192,6 @@ def searchPokemon(name):
 
 
 if __name__ == "__main__":
+	init_db()
 	app.run(host="0.0.0.0", port=5001, debug=True)
+

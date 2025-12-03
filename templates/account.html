@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <input id="sidebar-toggler-input" type="checkbox" style="display:none;" />
+		<label class="sidebar-toggler" for="sidebar-toggler-input">
+			<svg viewBox="0 0 448 512" width="100" title="bars" class="sidebar-toggler-icon">
+				<path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+			</svg>
+		</label>
+        <aside class="sidebar">
+			<div class="sidebar-content">
+				<div class="padding">
+					<nav>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/gen1">Generation 1</a></li>
+							<li><a href="/gen2">Generation 2</a></li>
+							<li><a href="/gen3">Generation 3</a></li>
+							<li><a href="/gen4">Generation 4</a></li>
+							<li><a href="/gen5">Generation 5</a></li>
+							<li><a href="/gen6">Generation 6</a></li>
+							<li><a href="/gen7">Generation 7</a></li>
+							<li><a href="/gen8">Generation 8</a></li>
+							<li><a href="/gen9">Generation 9</a></li>
+							<li><a href="/team">Team Builder</a></li>
+							<li><a href="/account">Account</a></li>
+						</ul>
+					</nav>
+					<label for="sidebar-toggler-input" class="sidebar-close" style="display:block;margin-top:2rem;cursor:pointer;">Close</label>
+				</div>
+			</div>
+		</aside>
+
+        <h1>Account</h1>
+
+        {% if not user %}
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <label>Email</label>
+                <input name="email" placeholder="Email" required>
+                <label>Password</label>
+                <input name="password" placeholder="Password" required>
+                <button>Log In</button>
+            </form>
+
+            <p>Don't have an account? <a href="/signup">Create Account</a></p>
+
+        {% else %}
+            <h2>Welcome back {{ user }}!</h2>
+            <p>Email: {{ email }}</p>
+            <a href="/logout"><button>Logout</button></a>
+        {% endif %}
+    </div>
+</body>
+</html>
