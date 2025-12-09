@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+:root {
+	--color-neutral-100: oklch(0.141 0.005 285.823);
+	--color-neutral-200: oklch(0.21 0.006 285.885);
+	--color-accent: oklch(0.685 0.169 237.323);
+	--color-accent-hover: oklch(0.588 0.158 241.966);
+	--color-text: oklch(0.985 0 0);
+	--rounding: .5rem;
+	--sidebar-toggler-size: 3rem;
+	--font: Geist Mono, monospace;
+}
+
+/*SIDEBAR*/
+
+@property --sidebar-width {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: true;
+}
+
+.wrapper {
+	background: transparent;
+	container-type: inline-size;
+}
+
+.wrapper:has(#sidebar-toggler-input:checked) {
+	--sidebar-width: 16;
+}
+
+.wrapper:not(:has(#sidebar-toggler-input:checked)) {
+	--sidebar-width: 0;
+}
+
+.sidebar {
+	z-index: 40;
+	background: radial-gradient(circle at top, #111827 0%, #020617 55%, #000 100%);
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	align-items: stretch;
+	justify-content: stretch;
+	width: 16rem;
+	transform: translateX(calc((var(--sidebar-width) - 16) * 1rem));
+	transition: transform 0.25s ease;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.sidebar-content {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	padding: 1.5rem 1rem 1.5rem 1.2rem;
+	box-sizing: border-box;
+}
+
+.sidebar nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar nav ul li {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+}
+
+/*SHARED NAV*/
+
+.main-nav-list,
+.sidebar nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.main-nav-link,
+.sidebar nav a {
+	display: block;
+	width: 170px;
+	max-width: 100%;
+	margin: 6px 0;
+	padding: 8px 18px;
+	border-radius: 999px;
+	background: rgba(15, 23, 42, 0.88);
+	border: 1px solid rgba(15, 23, 42, 0.95);
+	color: #e5e7eb;
+	font-family: var(--font);
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	text-decoration: none;
+	line-height: 1;
+	box-shadow:
+		0 6px 16px rgba(0, 0, 0, 0.55),
+		0 0 0 1px rgba(15, 23, 42, 0.7);
+	transition:
+		background 0.15s ease,
+		box-shadow 0.15s ease,
+		transform 0.15s ease,
+		color 0.15s ease;
+}
+
+.main-nav-link:hover,
+.sidebar nav a:hover {
+	background: rgba(31, 41, 55, 0.96);
+	transform: translateY(-1px);
+	box-shadow:
+		0 10px 24px rgba(0, 0, 0, 0.75),
+		0 0 0 1px rgba(148, 163, 184, 0.3);
+}
+
+.main-nav-link.is-active,
+.sidebar nav a.active {
+	background: #f97316;
+	color: #0b1120;
+	box-shadow:
+		0 10px 26px rgba(248, 115, 22, 0.55),
+		0 0 0 2px rgba(254, 249, 195, 0.9);
+}
+
+/*HomePage static*/
+
+.main-nav-rail {
+	position: fixed;
+	top: 40px;
+	left: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	z-index: 20;
+}
+
+.main-nav-list {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+
+@media (max-width: 900px) {
+	.main-nav-rail {
+		top: 24px;
+		left: 12px;
+	}
+
+	.main-nav-link {
+		width: 150px;
+		padding-inline: 14px;
+		font-size: 12px;
+	}
+}
+
+.sidebar-toggler {
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(circle at top left, #1e293b 0%, #020617 65%);
+	height: var(--sidebar-toggler-size);
+	width: var(--sidebar-toggler-size);
+	border: 0;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: 0.15s ease;
+	z-index: 100;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75);
+}
+
+.sidebar-toggler-icon {
+	fill: #e5e7eb;
+	height: calc(var(--sidebar-toggler-size) * 0.45);
+	width: calc(var(--sidebar-toggler-size) * 0.45);
+}
+
+.sidebar-toggler:hover {
+	transform: translateY(-1px) scale(1.03);
+	background: radial-gradient(circle at top left, #111827 0%, #020617 70%);
+}
+
+.sidebar-close {
+	display: block;
+	margin: 2rem auto 0;
+	padding: 0.5rem 1rem;
+	width: 80%;
+	text-align: center;
+	border-radius: 999px;
+	background: rgba(15, 23, 42, 0.9);
+	color: #e5e7eb;
+	font-size: 13px;
+	cursor: pointer;
+	border: 1px solid rgba(30, 64, 175, 0.6);
+	transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.sidebar-close:hover {
+	background: rgba(30, 64, 175, 0.95);
+	box-shadow: 0 10px 26px rgba(15, 23, 42, 0.75);
+	transform: translateY(-1px);
+}
+
+.sidebar-content {
+	padding-top: 90px;
+}

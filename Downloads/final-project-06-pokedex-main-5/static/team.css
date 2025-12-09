@@ -1,0 +1,392 @@
+/* ----------------------------------
+   TEAM PAGE BASE
+---------------------------------- */
+
+.team-page {
+    background: radial-gradient(circle at top, #0d1a3d, #040812 60%);
+    color: #ffffff;
+}
+
+body.team-page {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.team-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 3rem;
+}
+
+.team-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* ----------------------------------
+   HEADER
+---------------------------------- */
+
+.team-header h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.team-header .team-subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.h22 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ----------------------------------
+   CONTROLS
+---------------------------------- */
+
+.team-controls {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team-name-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.team-name-group label {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+#team-name-input {
+    min-width: 230px;
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(7, 11, 26, 0.9);
+    color: inherit;
+}
+
+#team-name-input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+#team-name-input:focus {
+    outline: none;
+    border-color: #ffd54a;
+}
+
+.team-status {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.team-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+/* ----------------------------------
+   BUTTONS
+---------------------------------- */
+
+.btn {
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.08s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
+}
+
+.btn-primary {
+    background: #ffd54a;
+    color: #141414;
+}
+
+.btn-secondary {
+    background: #2e7dff;
+    color: #f5f5f5;
+}
+
+.btn-danger {
+    background: #e53935;
+    color: #fff;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* ----------------------------------
+   TEAM SLOTS
+---------------------------------- */
+
+.team-slots {
+    margin-top: 2.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.team-slot {
+    background: rgba(7, 11, 26, 0.96);
+    border-radius: 1rem;
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    padding: 0.85rem 0.9rem;
+    min-height: 220px;
+    overflow: hidden;
+    /* stop art from spilling out */
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.team-slots2 {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(300px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.team-slot2 {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    border: 1px dashed #555;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.slot-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    opacity: 0.75;
+}
+
+/* content inside each slot */
+
+.slot-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.3rem 0.2rem 0.5rem;
+    text-align: center;
+}
+
+.slot-empty {
+    font-size: 0.9rem;
+    opacity: 0.55;
+}
+
+/* image dropped in by team.js */
+
+.team-slot img {
+    max-height: 130px;
+    /* key: shrink the art */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* name + remove button inside slot */
+
+.slot-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.2rem;
+}
+
+.slot-remove-btn {
+    margin-top: auto;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    transition: background 0.15s ease-out, transform 0.08s ease-out;
+}
+
+.slot-remove-btn:hover {
+    background: rgba(255, 82, 82, 0.9);
+    transform: translateY(-1px);
+}
+
+/* ----------------------------------
+   SEARCH + RESULT
+---------------------------------- */
+
+.team-search-section {
+    margin-top: 2.3rem;
+}
+
+.team-search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#team-search-input {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(7, 11, 26, 0.9);
+    color: inherit;
+}
+
+#team-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+#team-search-input:focus {
+    outline: none;
+    border-color: #4f8cff;
+}
+
+#team-error {
+    margin-top: 0.6rem;
+}
+
+/* preview area under search */
+
+.team-result {
+    margin-top: 1.8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.team-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.team-preview .pokemon-card {
+    margin: 0 auto;
+}
+
+/* ----------------------------------
+   FOOTER
+---------------------------------- */
+
+.team-footer {
+    text-align: center;
+    margin-top: 3rem;
+    opacity: 0.75;
+}
+
+/* ----------------------------------
+   RESPONSIVE
+---------------------------------- */
+
+@media (max-width: 900px) {
+    .team-slots {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .team-slots {
+        grid-template-columns: 1fr;
+    }
+
+    .team-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .team-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* ----------------------------------
+   ACCOUNT
+---------------------------------- */
+
+.account-info {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 0 auto;
+    border: 1px solid #444;
+    border-radius: 1px;
+    background-color: #1e1e1e;
+}
+
+.team-scale {
+    transform: scale(0.5);
+    transform-origin: left;
+    margin-left: 35px;
+}
+
+.team-section {
+    max-height: 400px;
+    margin-top: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #1e1e1e;
+}
+
+.team-section h1 {
+    font-size: 1.5rem;
+    padding: 0px;
+}
+
+.team-header-row {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 50%;
+}
+
+.pokemon-card {
+    min-width: 200px;
+}
+
+.login-box h2, .login-box p {
+    text-align: left;
+    margin-left: 350px;
+}
+
+.signup-box p {
+    text-align: center;
+}
+
+
+
+
