@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team Builder • Pocket Pokédex</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='team.css') }}" />
+</head>
+
+<body class="team-page">
+    <div class="wrapper">
+
+        <!-- Sidebar toggle checkbox -->
+        <input id="sidebar-toggler-input" type="checkbox" style="display:none;" />
+
+        <!-- Hamburger -->
+        <label class="sidebar-toggler" for="sidebar-toggler-input">
+            <svg viewBox="0 0 448 512" class="sidebar-toggler-icon">
+                <path
+                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </label>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="padding">
+                    
+                    <nav>
+                        <br><br>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/gen1">Generation 1</a></li>
+                            <li><a href="/gen2">Generation 2</a></li>
+                            <li><a href="/gen3">Generation 3</a></li>
+                            <li><a href="/gen4">Generation 4</a></li>
+                            <li><a href="/gen5">Generation 5</a></li>
+                            <li><a href="/gen6">Generation 6</a></li>
+                            <li><a href="/gen7">Generation 7</a></li>
+                            <li><a href="/gen8">Generation 8</a></li>
+                            <li><a href="/gen9">Generation 9</a></li>
+                            <li><a href="/team" class="active">Team Builder</a></li>
+                            <li><a href="/account">Account</a></li>
+                        </ul>
+                    </nav>
+                    <label for="sidebar-toggler-input" class="sidebar-close">Close</label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="team-main">
+            <div class="team-container">
+
+                <header class="team-header">
+                    <h1>Team Builder</h1>
+                    <p class="team-subtitle">
+                        Build up to six Pokémon. Search below and click “Add to Team”.
+                    </p>
+                </header>
+
+                <!-- Controls -->
+                <section class="team-controls">
+                    <div class="team-name-group">
+                        <label for="team-name-input">Team:</label>
+                        <input id="team-name-input" type="text" placeholder="Team name (e.g., Kanto Sweep)" />
+                        <span id="team-status" class="team-status">(unsaved)</span>
+                    </div>
+
+                    <div class="team-buttons">
+                        <button id="save-team-btn" type="button" class="btn btn-primary">
+                            Save Team
+                        </button>
+                        <button id="export-team-btn" type="button" class="btn btn-secondary">
+                            Export JSON
+                        </button>
+                        <button id="clear-team-btn" type="button" class="btn btn-danger">
+                            Clear Team
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Team Slots -->
+                <section class="team-slots" id="team-slots">
+                    <div class="team-slot" data-index="0">
+                        <div class="slot-label">#1</div>
+                        <div class="slot-content">
+                            <span class="slot-empty">Empty Slot</span>
+                        </div>
+                    </div>
+                    <div class="team-slot" data-index="1">
+                        <div class="slot-label">#2</div>
+                        <div class="slot-content">
+                            <span class="slot-empty">Empty Slot</span>
+                        </div>
+                    </div>
+                    <div class="team-slot" data-index="2">
+                        <div class="slot-label">#3</div>
+                        <div class="slot-content">
+                            <span class="slot-empty">Empty Slot</span>
+                        </div>
+                    </div>
+                    <div class="team-slot" data-index="3">
+                        <div class="slot-label">#4</div>
+                        <div class="slot-content">
+                            <span class="slot-empty">Empty Slot</span>
+                        </div>
+                    </div>
+                    <div class="team-slot" data-index="4">
+                        <div class="slot-label">#5</div>
+                        <div class="slot-content">
+                            <span class="slot-empty">Empty Slot</span>
+                        </div>
+                    </div>
+                    <div class="team-slot" data-index="5">
+                        <div class="slot-label">#6</div>
+                        <div class="slot-content">
+                            <span class="slot-empty">Empty Slot</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Search -->
+                <section class="team-search-section">
+                    <form id="team-search-form" class="team-search-form">
+                        <input id="team-search-input" type="text" placeholder="Search Pokémon (e.g., pikachu)" />
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                    <p id="team-error" class="error hidden"></p>
+                </section>
+
+                <!-- Search result preview -->
+                <section id="team-result" class="team-result"></section>
+
+                <!-- Template for preview card -->
+                <template id="team-card-template">
+                    <div class="team-preview">
+                        <div class="pokemon-card" data-main-type="">
+                            <div class="card-header">
+                                <h3 class="pokemon-name"></h3>
+                                <div class="pokemon-hp"><span>HP</span></div>
+                            </div>
+
+                            <div class="card-image-container">
+                                <div class="pokemon-id-badge"></div>
+                                <img src="" alt="" loading="lazy">
+                            </div>
+
+                            <div class="type-section">
+                                <div class="type-label">Type</div>
+                                <div class="pokemon-types"></div>
+                            </div>
+
+                            <div class="abilities-section">
+                                <h4>Abilities</h4>
+                                <div class="ability-list"></div>
+                            </div>
+
+                            <div class="card-footer">
+                                <span>© Pokémon</span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary add-to-team-btn">
+                            Add to Team
+                        </button>
+                    </div>
+                </template>
+
+                <footer class="site-footer team-footer">
+                    © 2025 Pocket Pokédex
+                </footer>
+            </div>
+        </main>
+    </div>
+    <script>
+        window.userLoggedIn= "{{ session.get('user_id') is not none }}";
+    </script>
+    <script src="{{ url_for('static', filename='team.js') }}"></script>
+    <script src="{{ url_for('static', filename='card-tilt.js') }}"></script>
+</body>
+
+</html>

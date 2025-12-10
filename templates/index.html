@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pocket Pokédex</title>
+
+    <!-- Layout -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}" />
+    <!-- Main app styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <!-- Modal styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='pokemon-modal.css') }}" />
+</head>
+
+<body class="index-page">
+    <div class="wrapper">
+        <!-- Sidebar toggle checkbox -->
+        <input id="sidebar-toggler-input" type="checkbox" style="display:none;" />
+
+        <!-- Hamburger -->
+        <label class="sidebar-toggler" for="sidebar-toggler-input">
+            <svg viewBox="0 0 448 512" class="sidebar-toggler-icon">
+                <path
+                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </label>
+
+        <!-- Sidebar Home-->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="padding">
+                    <!-- <h2 class="sidebar-title">Pocket Pokédex</h2> -->
+                    <nav>
+                        <ul>
+                            <br><br>
+                            <li><a href="/" class="active">Home</a></li>
+                            <li><a href="/gen1">Generation 1</a></li>
+                            <li><a href="/gen2">Generation 2</a></li>
+                            <li><a href="/gen3">Generation 3</a></li>
+                            <li><a href="/gen4">Generation 4</a></li>
+                            <li><a href="/gen5">Generation 5</a></li>
+                            <li><a href="/gen6">Generation 6</a></li>
+                            <li><a href="/gen7">Generation 7</a></li>
+                            <li><a href="/gen8">Generation 8</a></li>
+                            <li><a href="/gen9">Generation 9</a></li>
+                            <li><a href="/team">Team Builder</a></li>
+							<li><a href="/account">Account</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="container index-main">
+            <div class="index-columns">
+                <!-- LEFT -->
+                <section class="index-left">
+                    <header class="hero">
+                        <h1>Welcome to Pocket Pokédex!</h1>
+                        <p class="hero-subtitle">
+                            Search any Pokémon by name or dex number and view its stats, abilities, and more.
+                        </p>
+                    </header>
+
+                    <form id="search-form" class="search-bar">
+                        <input id="name-input" type="text" placeholder="Enter Pokémon name (e.g., pikachu)" />
+                        <button type="submit">Search</button>
+                    </form>
+
+                    <section id="result" class="pokemon-list hidden"></section>
+                    <p id="error" class="error hidden"></p>
+
+                    <!-- Card Template  -->
+                    <template id="card-template">
+                        <div class="pokemon-card" data-main-type="">
+                            <div class="card-header">
+                                <h3 class="pokemon-name"></h3>
+                                <div class="pokemon-hp"><span>HP</span></div>
+                            </div>
+                            <div class="card-image-container">
+                                <div class="pokemon-id-badge"></div>
+                                <img src="" alt="" loading="lazy">
+                            </div>
+                            <div class="type-section">
+                                <div class="type-label">Type</div>
+                                <div class="pokemon-types"></div>
+                            </div>
+                            <div class="abilities-section">
+                                <h4>Abilities</h4>
+                                <div class="ability-list"></div>
+                            </div>
+                            <div class="card-footer">
+                                <span>© Pokémon</span>
+                            </div>
+                        </div>
+                    </template>
+                </section>
+
+                <!-- RIGHT: Pokémon of the Day -->
+                <aside class="index-right">
+                    <h2 class="pod-title">Pokémon of the Day</h2>
+                    <p class="pod-subtitle">A random pick each time you visit.</p>
+                    <div id="pokemon-of-the-day"></div>
+                </aside>
+            </div>
+
+            <footer class="site-footer">
+                © 2025 Pocket Pokédex
+            </footer>
+        </main>
+    </div>
+
+    <!-- Pokémon Detail Modal  -->
+    <div id="pokemon-modal-overlay" class="pokemon-modal-overlay">
+        <div class="pokemon-modal">
+            <button id="modal-close" class="pokemon-modal-close">&times;</button>
+            <article class="pokedex-card" aria-label="Pokémon card">
+                <div class="card-left">
+                    <div class="poke-image-wrap" aria-hidden="false">
+                        <img id="modal-pokemon-image" class="poke-image" src="" alt="" />
+                    </div>
+
+                    <div class="id-name">
+                        <div class="poke-id" id="modal-poke-id">#000</div>
+                        <div class="poke-name" id="modal-poke-name">Loading...</div>
+                        <div class="type-badges" id="modal-type-badges"></div>
+                    </div>
+
+                    <div class="meta-row" aria-hidden="false" style="margin-top:8px;">
+                        <div class="meta-item" id="modal-height">Height: - m</div>
+                        <div class="meta-item" id="modal-weight">Weight: - kg</div>
+                        <div class="meta-item" id="modal-species">Species: -</div>
+                    </div>
+                </div>
+
+                <div class="card-right">
+                    <div>
+                        <div class="section-title">About</div>
+                        <p class="muted" id="modal-pokedex-entry">
+                            Loading description...
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="section-title">Abilities</div>
+                        <div class="abilities" id="modal-abilities"></div>
+                    </div>
+
+                    <div>
+                        <div class="section-title">Base Stats</div>
+                        <div class="stats-grid" id="modal-stats-grid"></div>
+                    </div>
+
+                    <div>
+                        <div class="section-title">Weaknesses / Notes</div>
+                        <p class="muted" id="modal-weaknesses">Loading...</p>
+                    </div>
+
+                    <div class="card-actions" aria-hidden="false">
+                        <button class="btn ghost" id="btn-view-more">Close</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='card-tilt.js') }}"></script>
+
+    <!-- Pokémon of the Day  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const podContainer = document.getElementById("pokemon-of-the-day");
+            const cardTemplate = document.getElementById("card-template");
+
+            if (!podContainer || !cardTemplate) return;
+
+            const randomId = Math.floor(Math.random() * 1025) + 1; 
+
+            fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
+                .then(res => res.json())
+                .then(p => {
+                    const clone = cardTemplate.content.cloneNode(true);
+                    const card = clone.querySelector(".pokemon-card");
+
+                    const mainType = (p.types && p.types[0] && p.types[0].type && p.types[0].type.name) || "normal";
+                    card.setAttribute("data-main-type", mainType);
+
+                    card.querySelector(".pokemon-name").textContent = (p.name || "Unknown").toUpperCase();
+
+                    const hpStat = p.stats && p.stats[0] ? p.stats[0].base_stat : 50;
+                    card.querySelector(".pokemon-hp").innerHTML = `${hpStat} <span>HP</span>`;
+
+                    const formattedId = String(p.id || 0).padStart(3, "0");
+                    card.querySelector(".pokemon-id-badge").textContent = `#${formattedId}`;
+
+                    const imgEl = card.querySelector(".card-image-container img");
+                    const art =
+                        p.sprites?.other?.["official-artwork"]?.front_default ||
+                        p.sprites?.front_default;
+                    imgEl.src = art || "";
+                    imgEl.alt = p.name || "Pokémon";
+
+                    const typesContainer = card.querySelector(".pokemon-types");
+                    typesContainer.innerHTML = "";
+                    (p.types || []).forEach(t => {
+                        const typeName = t.type?.name || "";
+                        const span = document.createElement("span");
+                        span.className = `type ${typeName}`;
+                        span.textContent = typeName.toUpperCase();
+                        typesContainer.appendChild(span);
+                    });
+
+                    const abilitiesContainer = card.querySelector(".ability-list");
+                    abilitiesContainer.innerHTML = "";
+                    (p.abilities || []).forEach(a => {
+                        const abilityItem = document.createElement("div");
+                        abilityItem.className = "ability-item";
+                        abilityItem.innerHTML = `
+                            <div class="ability-icon">⭐</div>
+                            <span class="ability-name">${a.ability?.name || ""}</span>
+                            ${a.is_hidden ? '<span class="ability-hidden">Hidden</span>' : ''}
+                        `;
+                        abilitiesContainer.appendChild(abilityItem);
+                    });
+
+                    podContainer.appendChild(clone);
+                })
+                .catch(err => {
+                    console.error("Error loading Pokémon of the Day:", err);
+                });
+        });
+    </script>
+</body>
+
+</html>
